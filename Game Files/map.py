@@ -52,34 +52,55 @@ def print_city_map(police_visible, hospital_visible, shipping_visible, victim_vi
 
     print(city_map)
 
-""" Commented out for now.
+
+#---------Poloce-Station-Rooms-------------
 r_police_lobby = {
     "name": "Police Lobby",
-
+    "building": "Police Station",
     "items": [],
-
-    "NPCs": [police_receptionist],
-
-    "exits": [r_outside_outside, r_police_player, r_police_chief, r_police_victim, r_police_interrogation]
+    "npcs": [police_receptionist],
+    "exits": {"building": r_outside_outside, "myoffice": r_police_player, "chiefsoffice": r_police_chief,
+    "victimsoffice": r_police_victim, "interrogationroom": r_police_interrogation}
 }
 
 r_police_player = {
     "name": "My Office",
-
+    "building": "Police Station",
     "items": [],
-
-    "NPCs": [],
-
-    "exits": [r_police_lobby]
+    "npcs": [],
+    "exits": {"policelobby": r_police_lobby}
 }
 
 r_police_chief = {
     "name": "Chief's Office",
-
+    "building": "Police Station",
     "items": [],
-
-    "NPCs": [],
-
-    "exits": [r_police_lobby]
+    "npcs": [],
+    "exits": {"policelobby": r_police_lobby}
 }
-"""
+
+r_police_victim = {
+    "name": "Victim's Office",
+    "building": "Police Station",
+    "items": [],
+    "npcs": [],
+    "exits": {"policelobby": r_police_lobby}
+}
+
+r_police_interrogation = {
+    "name": "Interrogation Room",
+    "building": "Police Station",
+    "items": [],
+    "npcs": [],
+    "exits": {"policelobby": r_police_lobby}
+}
+
+#-----------Outside-Room--------------
+
+r_outside_outside = {
+	"name": "Outside",
+	"building": "Outside",
+    "items": [],
+    "npcs": [],
+    "exits": {"policestation": r_police_lobby}
+}

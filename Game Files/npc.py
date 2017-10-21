@@ -1,4 +1,4 @@
-police_receptionest = {
+police_receptionist = {
 
 "name": "Chloe",
 

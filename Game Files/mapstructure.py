@@ -14,7 +14,7 @@ r_police_lobby = {
     "building": "Police Station",
     "items": [],
     "npcs": [npc.police_receptionist],
-    "exits": {"building": "outsideoutside", "myoffice": "myoffice", "chiefsoffice": "chiefsoffice",
+    "exits": {"outside": "outsideoutside", "building": "outsideoutside", "myoffice": "myoffice", "chiefsoffice": "chiefsoffice",
     "victimsoffice": "victimsoffice", "interrogationroom": "interrogationroom"}
 }
 

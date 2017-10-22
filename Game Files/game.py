@@ -42,14 +42,17 @@ def print_room_items(room):
 
 
 def print_inventory(items):
-    print("You have " + list_of_items(items) + "in your briefcase.")
+    if player.inventory == []:
+        print("Your briefcase is empty. Use TAKE [ITEM] to take something into your briefcase.")
+    else:
+        print("You have " + list_of_items(items) + "in your briefcase.")
     # Add more here later.
 
 
 def print_room_name(room):
     # Display room name.
     if room["name"] == "Outside":
-        print("You're OUTSIDE.")
+        print("You're outside. Use ENTER [BUILDING NAME] to enter a building on the map.")
     else:
         print("You're in the %s." % (room["name"]))
 

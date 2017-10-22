@@ -1,9 +1,4 @@
 police_receptionist = {
-
-"name": "Chloe",
-
-"items": "",
-	
-
-
+    "name": "Chloe",
+    "items": [],
 }

@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+import os
 import mapstructure as map_s
 import mapvisuals as map_v
 import player
@@ -19,6 +20,7 @@ def print_commands_help():
 │ DROP [ITEM]                │ Take an item out of your briefcase.                              │
 │ OPEN [ITEM/ELEMENT]        │ Open an item in your briefcase or interactive element in a room. │
 │ CLOSE [ITEM/ELEMENT]       │ Close an item in your briefcase or interactive element in a room.│
+│ END                        │ End the game.                                                    │
 └────────────────────────────┴──────────────────────────────────────────────────────────────────┘""")
 
 
@@ -57,36 +59,21 @@ def is_valid_exit(exits, chosen_exit):
 
 
 def execute_go(destination):
-    """This function, given the direction (e.g. "south") updates the current room
-    to reflect the movement of the player if the direction is a valid exit
-    (and prints the name of the room into which the player is
-    moving). Otherwise, it prints "You cannot go there."
-    """
-
-
     if is_valid_exit(player.current_room["exits"], destination):
         player.current_room = move(player.current_room["exits"], destination)
-        print(player.current_room["name"])
     else:
         print("You cannot go there.")
 
 
 def execute_take(item_id):
-    """This function takes an item_id as an argument and moves this item from the
-    list of items in the current room to the player's inventory. However, if
-    there is no such item in the room, this function prints
-    "You cannot take that."
-    """
-    global current_room
-    global inventory
-
     item_in_room = False
 
-    for item in current_room["items"]:
-        if item["id"] == item_id and can_take_to_inv(inventory, item):
-            inventory.append(item)
-            current_room["items"].remove(item)
+    for item in player.current_room["items"]:
+        if item["id"] == item_id:
+            player.inventory.append(item)
+            player.current_room["items"].remove(item)
             item_in_room = True
+            print(item["id"] + "has been added to your briefcase.")
     
     if item_in_room == False:
         print("You cannot take that.")
@@ -123,7 +110,7 @@ def execute_command(command):
     if 0 == len(command):
         return
 
-    if command[0] == "go":
+    if command[0] == "go" or command == "enter":
         if len(command) > 1:
             execute_go(command[1])
         else:
@@ -145,7 +132,10 @@ def execute_command(command):
         print_commands_help()
 
     elif command[0] == "briefcase":
-        print_inventory()
+        print_inventory(player.inventory)
+
+    elif command[0] == "end":
+        exit()
 
     else:
         print("This makes no sense.")
@@ -174,26 +164,37 @@ def move(exits, destination):
 def main():
     game_won = False
 
-    print("Welcome to GAME NAME, here as some commands that are common throughout the game:")
+    # Resize the console for more room (also means no scrollback, potentially more predictable player experience?)
+    os.system("mode con: cols=150 lines=42") # Not sure whether this'll work on uni comps with permission restrictions.
+
+    print("Welcome to GAME NAME, here as some commands that are common throughout the game:") # Add typing effect here.
     print_commands_help()
-    print("""Don't worry about remembering them all, most atypical commands will be displayed in the game, 
-and you can always display the above table to remind yourself by typing the command HELP.""")
+    print("""\nDon't worry about remembering them all, most atypical commands will be displayed in the game, 
+and you can always display the above table to remind yourself by typing the command HELP.""") # Add typing effect here.
 
-    # Main game loop
-    while game_won == False:
-        # Display game map
-        map_v.print_map(player.current_room)
+    ready = input("\nReady to start the game? (Y/N)\n» ")
+    gamestart = gameparser.normalise_input(ready)
 
-        # Show the menu with possible actions and ask the player
-        command = print_menu(player.current_room)
+    if gamestart[0] == "y" or gamestart[0] == "yes":
 
-        # Execute the player's command
-        execute_command(command)
+        # Main game loop
+        while game_won == False:
+            # Display game map
+            map_v.print_map(player.current_room)
 
-        # Check if game is won.
-        if False:
-            game_won = True
-            print("GAME WON!")
+            # Show the menu with possible actions and ask the player
+            command = print_menu(player.current_room)
+
+            # Execute the player's command
+            execute_command(command)
+
+            # Check if game is won.
+            if False:
+                game_won = True
+                print("GAME WON!")
+
+    else:
+        exit()
 
 
 # Are we being run as a script? If so, run main().

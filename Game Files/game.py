@@ -121,13 +121,8 @@ def execute_drop(item_id):
 def conversation(dictionary):
     options_list = []
     print()
-    for key in dictionary:
-        option_string = dictionary[key][0]
-        options_list.append(option_string)
-
-    options_list.sort()
-    for option in options_list:
-        print(option)
+    for key in sorted(dictionary):
+        print(dictionary[key][0])
 
     chosen_dialogue = input("\nSelect Dialogue Option Letter:\n\n» ")
     dialogue_choice = gameparser.normalise_input(chosen_dialogue)
@@ -143,8 +138,6 @@ def conversation(dictionary):
         elif dictionary[dialogue_choice[0]][2] == "end_convo":
             return False
 
-
-        
 
 def execute_talk(npc):
     keep_talking = True

@@ -57,6 +57,13 @@ def print_room_name(room):
         print("You're in the %s." % (room["name"]))
 
 
+def print_room_npcs(room):
+    if room["npcs"] == []:
+        print("There is no one here.")
+    else:
+        print("There is " + list_of_items(room["npcs"]) + " here.")
+
+
 def is_valid_exit(exits, chosen_exit):
     return chosen_exit in exits
 
@@ -66,6 +73,7 @@ def execute_go(destination):
         player.current_room = move(player.current_room["exits"], destination)
     else:
         print("You cannot go there.")
+
 
 
 def execute_take(item_id):
@@ -113,9 +121,15 @@ def execute_command(command):
     if 0 == len(command):
         return
 
-    if command[0] == "go" or command == "enter":
+    if command[0] == "go" or command[0] == "enter":
         if len(command) > 1:
-            execute_go(command[1])
+            if len(command) > 2:
+                dest_concact = command[1] + command[2]
+                execute_go(dest_concact)
+            elif len(command) == 2:
+                execute_go(command[1])
+            else:
+                print("Go where? (Make sure to specifty building/room name as displayed).")
         else:
             print("Go where?")
 
@@ -140,6 +154,10 @@ def execute_command(command):
     elif command[0] == "end":
         exit()
 
+    elif command[0] == "exit":
+        if player.current_room != map_s.rooms["outsideoutside"]:
+            player.current_room = move(player.current_room["exits"], "exit")
+
     else:
         print("This makes no sense.")
 
@@ -148,9 +166,10 @@ def print_menu(room):
     # Display room name and items.
     print_room_name(room)
     print_room_items(room)
+    print_room_npcs(room)
 
     # Read player's input
-    user_input = input("» ")
+    user_input = input("\n» ")
 
     # Normalise the input
     normalised_user_input = gameparser.normalise_input(user_input)

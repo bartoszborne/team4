@@ -13,8 +13,8 @@ r_police_lobby = {
     "name": "Police Lobby",
     "building": "Police Station",
     "items": [],
-    "npcs": [npc.police_receptionist],
-    "exits": {"outside": "outsideoutside", "building": "outsideoutside", "myoffice": "myoffice", "chiefsoffice": "chiefsoffice",
+    "npcs": [],
+    "exits": {"exit": "outsideoutside", "outside": "outsideoutside", "building": "outsideoutside", "myoffice": "myoffice", "chiefsoffice": "chiefsoffice",
     "victimsoffice": "victimsoffice", "interrogationroom": "interrogationroom"}
 }
 
@@ -23,7 +23,7 @@ r_police_player = {
     "building": "Police Station",
     "items": [],
     "npcs": [],
-    "exits": {"policelobby": "policelobby"}
+    "exits": {"exit": "policelobby", "policelobby": "policelobby"}
 }
 
 r_police_chief = {
@@ -31,7 +31,7 @@ r_police_chief = {
     "building": "Police Station",
     "items": [items.assignment],
     "npcs": [],
-    "exits": {"policelobby": "policelobby"}
+    "exits": {"exit": "policelobby", "policelobby": "policelobby"}
 }
 
 r_police_victim = {
@@ -39,7 +39,7 @@ r_police_victim = {
     "building": "Police Station",
     "items": [],
     "npcs": [],
-    "exits": {"policelobby": "policelobby"}
+    "exits": {"exit": "policelobby", "policelobby": "policelobby"}
 }
 
 r_police_interrogation = {
@@ -47,7 +47,7 @@ r_police_interrogation = {
     "building": "Police Station",
     "items": [],
     "npcs": [],
-    "exits": {"policelobby": "policelobby"}
+    "exits": {"exit": "policelobby", "policelobby": "policelobby"}
 }
 
 #-----------Outside-Room--------------
@@ -57,7 +57,7 @@ r_outside_outside = {
     "building": "Outside",
     "items": [],
     "npcs": [],
-    "exits": {"policestation": "policelobby"}
+    "exits": {"policestation": "policelobby", "police": "policelobby"}
 }
 
 #---------ROOMS DICT-----------------

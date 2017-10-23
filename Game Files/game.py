@@ -58,14 +58,21 @@ def print_room_name(room):
 
 
 def print_room_npcs(room):
-    if room["npcs"] == []:
-        print("There is no one here.")
+    if len(room["npcs"]) == 0:
+        return
     else:
-        print("There is " + list_of_items(room["npcs"]) + " here.")
+        for key in room["npcs"]:
+            print(room["npcs"][key]["name"] + " is in this room.")
+
 
 
 def is_valid_exit(exits, chosen_exit):
     return chosen_exit in exits
+
+
+def give_item(item):
+    player.inventory.append(item)
+    print(item["id"] + " has been added to your briefcase.")
 
 
 def execute_go(destination):
@@ -108,8 +115,42 @@ def execute_drop(item_id):
 
     if item_in_inv == False:
         print("You cannot drop that.")
-    
 
+
+def conversation(dictionary):
+    options_list = []
+    print()
+    for key in dictionary:
+        option_string = dictionary[key][0]
+        options_list.append(option_string)
+
+    options_list.sort()
+    for option in options_list:
+        print(option)
+
+    chosen_dialogue = input("\nSelect Dialogue Option Letter:\n\n» ")
+    dialogue_choice = gameparser.normalise_input(chosen_dialogue)
+
+    if dialogue_choice[0] == "end":
+        exit()
+    elif dialogue_choice[0] == "a" or dialogue_choice[0] == "b" or dialogue_choice[0] == "c":
+        print(dictionary[dialogue_choice[0]][1])
+        if type(dictionary[dialogue_choice[0]][2]) == dict:
+            conversation(dictionary[dialogue_choice[0]][2])
+        elif type(dictionary[dialogue_choice[0]][2]) == list:
+            give_item(dictionary[dialogue_choice[0]][2][0])
+        elif dictionary[dialogue_choice[0]][2] == "end_convo":
+            return "end_convo"
+
+
+        
+
+def execute_talk(npc):
+    keep_talking = True
+    while keep_talking:
+        keep_talking = conversation(npc["dialogue"])
+
+        
 def execute_command(command):
     """This function takes a command (a list of words as returned by
     normalise_input) and, depending on the type of action (the first word of
@@ -157,6 +198,16 @@ def execute_command(command):
     elif command[0] == "exit":
         if player.current_room != map_s.rooms["outsideoutside"]:
             player.current_room = move(player.current_room["exits"], "exit")
+
+    elif command[0] == "talk":
+        if len(command) > 1:
+            if len(command) > 2:
+                npc_concact = command[1] + command[2]
+                execute_talk(player.current_room["npcs"][npc_concact])
+            elif len(command) == 2:
+                execute_talk(command[1])
+            else:
+                print("Talk to whom?")
 
     else:
         print("This makes no sense.")

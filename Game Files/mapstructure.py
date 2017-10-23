@@ -13,7 +13,7 @@ r_police_lobby = {
     "name": "Police Lobby",
     "building": "Police Station",
     "items": [],
-    "npcs": [],
+    "npcs": {"hospitalreceptionist": npc.hospital_receptionist}, #CHANGE ME LATER! you pleb!
     "exits": {"exit": "outsideoutside", "outside": "outsideoutside", "building": "outsideoutside", "myoffice": "myoffice", "chiefsoffice": "chiefsoffice",
     "victimsoffice": "victimsoffice", "interrogationroom": "interrogationroom"}
 }

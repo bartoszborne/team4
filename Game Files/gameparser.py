@@ -1,7 +1,7 @@
 import string
 
 # List of words to be filtered out.
-skip_words = ['a', 'about', 'all', 'an', 'another', 'any', 'around', 'at',
+skip_words = ['about', 'all', 'an', 'another', 'any', 'around', 'at',
               'bad', 'beautiful', 'been', 'better', 'big', 'can', 'every', 'for',
               'from', 'good', 'have', 'her', 'here', 'hers', 'his', 'how',
               'i', 'if', 'in', 'into', 'is', 'it', 'its', 'large', 'later',

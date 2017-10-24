@@ -187,6 +187,12 @@ def execute_command(command):
         print_inventory(player.inventory)
 
     elif command[0] == "end":
+        ready = input("\nSave game? (Y/N)\n» ")
+        shouldload = gameparser.normalise_input(ready)
+
+        if shouldload[0] == "y" or shouldload[0] == "yes":
+            player.save()
+            
         exit()
 
     elif command[0] == "exit":
@@ -233,6 +239,13 @@ def main():
 
     # Resize the console for more room (also means no scrollback, potentially more predictable player experience?)
     os.system("mode con: cols=150 lines=42") # Not sure whether this'll work on uni comps with permission restrictions.
+    
+    ready = input("\nLoad existing game? (Y/N)\n» ")
+    shouldload = gameparser.normalise_input(ready)
+
+    if shouldload[0] == "y" or shouldload[0] == "yes":
+        player.load()
+        
 
     print("Welcome to GAME NAME, here as some commands that are common throughout the game:") # Add typing effect here.
     print_commands_help()

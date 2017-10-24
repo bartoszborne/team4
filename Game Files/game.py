@@ -63,7 +63,7 @@ def print_room_npcs(room):
         return
     else:
         for key in room["npcs"]:
-            print(room["npcs"][key]["name"] + " is in this room.")
+            print(room["npcs"][key]["name"] + " in this room. You can TALK to " + room["npcs"][key]["id"].upper())
 
 
 
@@ -247,7 +247,9 @@ and you can always display the above table to remind yourself by typing the comm
         # Main game loop
         while game_won == False:
             # Display game map
+            print("\n· · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·")
             map_v.print_map(player.current_room)
+            print()
 
             # Show the menu with possible actions and ask the player
             command = print_menu(player.current_room)

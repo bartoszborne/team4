@@ -19,7 +19,7 @@ def print_city_map(police_visible, hospital_visible, shipping_visible, victim_vi
         print_shipping = ["                ", "                ", "                "]
 
     if victim_visible:
-        print_victim = [" Victim's House ", "      ╔═╗       ", "      ╚═╝       "]
+        print_victim = ["  Joe's House   ", "      ╔═╗       ", "      ╚═╝       "]
     else:
         print_victim = ["                ", "                ", "                "]
     
@@ -80,28 +80,27 @@ def print_building_map(building):
     elif building == "Hospital":
         print("""
 ╔═══════════════════════════ HOSPITAL - ROOMS ═══════════════════════════╗
-║                                                                        ║
-║                                                                        ║
-║                                                                        ║
-║                                                                        ║
-║                                                                        ║
-║                                                                        ║
-║                                                                        ║
-║                                                                        ║
-║                                                                        ║
-║                                                                        ║
-║                                                                        ║
-║                       ╔════════════════════════╗                       ║
-║                       ║                        ║                       ║
-║                       ║                        ║                       ║
-║                       ║                        ║                       ║
+║ ╔══════════════╗                                                       ║
+║ ║ Patient's    ║                                                       ║
+║ ║ Room (Joe)   ║                                                       ║
+║ ║              ║                                   ╔═════════════════╗ ║
+║ ║              ║                                   ║ Surveillance    ║ ║
+║ ╚╗  ╔══════════╝                           ┌───────╝ Room            ║ ║
+║  │  │                                      │                         ║ ║
+║  │  │                                      │  ┌────╗                 ║ ║
+║  │  │                                      │  │    ╚═════════════════╝ ║
+║  │  │                                      │  │                        ║
+║  │  │                                      │  │                        ║
+║  │  │                 ╔════════════════════╝  ╚╗                       ║
+║  │  └─────────────────╝ Hospital Reception     ║                       ║
+║  │                                             ║                       ║
+║  └────────────────────╗                        ║                       ║
 ║                       ║                        ║                       ║
 ║                       ║                        ║                       ║
 ║                       ║                        ║                       ║
 ║                       ╚══════════╗  ╔══════════╝                       ║
 ╚══════════════════════════════════╝  ╚══════════════════════════════════╝""")
 
-    #Add rest of buildings and visibility formatting.
 
 
 def print_map(current_room):

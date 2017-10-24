@@ -118,31 +118,47 @@ def execute_drop(item_id):
         print("You cannot drop that.")
 
 
-def conversation(dictionary):
+def conversation(dictionary, npc_id):
     options_list = []
-    print()
-    for key in sorted(dictionary):
-        print(dictionary[key][0])
+    print("\nSelect Dialogue Option Letter:\n")
 
-    chosen_dialogue = input("\nSelect Dialogue Option Letter:\n\n» ")
+    for key in sorted(dictionary):
+        print(str(key).upper() + ': "' + dictionary[key][0] + '"')
+
+    chosen_dialogue = input("\n» ")
     dialogue_choice = gameparser.normalise_input(chosen_dialogue)
 
     if dialogue_choice[0] == "end":
         exit()
     elif dialogue_choice[0] == "a" or dialogue_choice[0] == "b" or dialogue_choice[0] == "c":
-        print(dictionary[dialogue_choice[0]][1])
+        print("\n· · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·\n")
+        print(npc_id.upper() + ': "' + dictionary[dialogue_choice[0]][1] + '"')
         if type(dictionary[dialogue_choice[0]][2]) == dict:
-            conversation(dictionary[dialogue_choice[0]][2])
+            conversation(dictionary[dialogue_choice[0]][2], npc_id)
         elif type(dictionary[dialogue_choice[0]][2]) == list:
             give_item(dictionary[dialogue_choice[0]][2][0])
+            return False
         elif dictionary[dialogue_choice[0]][2] == "end_convo":
             return False
 
 
 def execute_talk(npc):
+    # Janrey's Code:
     keep_talking = True
-    while keep_talking:
-        keep_talking = conversation(npc["dialogue"])
+    if npc in player.current_room["npcs"]:
+        while keep_talking ==True:
+            keep_talking = conversation(player.current_room["npcs"][npc]["dialogue"], player.current_room["npcs"][npc]["id"])
+    else:
+        print("Talk to whom?")
+
+# Bartosz Shitty code:
+"""    for key in player.current_room["npcs"]:
+        if key == npc:
+            npc_in_room = True
+            npc_value = key[npc]
+
+    if npc_in_room == True:
+        conversation(npc_value["dialogue"])"""
 
         
 def execute_command(command):
@@ -197,7 +213,7 @@ def execute_command(command):
         if len(command) > 1:
             if len(command) > 2:
                 npc_concact = command[1] + command[2]
-                execute_talk(player.current_room["npcs"][npc_concact])
+                execute_talk(npc_concact)
             elif len(command) == 2:
                 execute_talk(command[1])
             else:

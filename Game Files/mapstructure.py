@@ -70,11 +70,11 @@ r_hospital_reception = {
     "building": "Hospital",
     "items": [],
     "npcs": {"hospitalreceptionist": npc.hospital_receptionist}, #CHANGE ME LATER! you pleb!
-    "exits": {"exit": "outsideoutside", "outside": "outsideoutside", "building": "outsideoutside", "patientsroom": "patientsroom", "surveillanceroom": "surveillanceroom"}
+    "exits": {"exit": "outsideoutside", "outside": "outsideoutside", "building": "outsideoutside", "patientsroom": "patientsroom", "joesroom": "patientsroom", "surveillanceroom": "surveillanceroom"}
 }
 
 r_hospital_patient = {
-    "name": "Joe's Ward Room",
+    "name": "Joe's Room",
     "building": "Hospital",
     "items": [],
     "npcs": {"joe": npc.joe_branson}, # ADD THE ASIAN (DR KIM JONGUN) DOCTOR
@@ -89,6 +89,42 @@ r_hospital_surveillance = {
     "exits": {"exit": "hospitalreception", "hospitalreception": "hospitalreception"}
 }
 
+#---------Joe's House-Rooms-------------
+r_joehouse_living = {
+    "name": "the Living Room",
+    "building": "Joe's House", #
+    "items": [],
+    "npcs": {}, #CHANGE ME LATER! you pleb!
+    "exits": {"exit": "outsideoutside", "outside": "outsideoutside", "building": "outsideoutside", "patientsroom": "patientsroom", "surveillanceroom": "surveillanceroom"}
+}
+
+r_joehouse_office = {
+    "name": "Joe Branson's Home Office",
+    "building": "Joe's House",
+    "items": [],
+    "npcs": {}, # ADD THE ASIAN (DR KIM JONGUN) DOCTOR
+    "exits": {"shippingwarehouse": "shippingwarehouse", "warehouse": "shippingwarehouse"}
+}
+
+
+#---------Shipping-Rooms-------------
+r_shipping_warehouse = {
+    "name": "the Shipping Warehouse",
+    "building": "Shipping Company",
+    "items": [],
+    "npcs": {}, #CHANGE ME LATER! you pleb!
+    "exits": {"exit": "outsideoutside", "outside": "outsideoutside", "building": "outsideoutside", "patientsroom": "patientsroom", "surveillanceroom": "surveillanceroom"}
+}
+
+r_shipping_office = {
+    "name": "the Shipping Company's Office",
+    "building": "Shipping Company",
+    "items": [],
+    "npcs": {}, # ADD THE ASIAN (DR KIM JONGUN) DOCTOR
+    "exits": {"shippingwarehouse": "shippingwarehouse", "warehouse": "shippingwarehouse",}
+}
+
+
 #-----------Outside-Room--------------
 
 r_outside_outside = {
@@ -96,7 +132,7 @@ r_outside_outside = {
     "building": "Outside",
     "items": [],
     "npcs": [],
-    "exits": {"policestation": "policelobby", "police": "policelobby", "hospital": "hospitalreception"}
+    "exits": {"policestation": "policelobby", "police": "policelobby", "hospital": "hospitalreception", "shipping": "shippingwarehouse", "shippingcompany": "shippingwarehouse"}
 }
 
 #---------ROOMS DICT-----------------
@@ -118,7 +154,6 @@ rooms = {
     "hospitalpatient": r_hospital_patient,
     "hospitalsurveillance": r_hospital_surveillance,
     #----------------SHIPPING WAREHOUSE DICT-------------------|
-    "shipping": r_hospital_reception,
-    "hospitalpatient": r_hospital_patient,
-    "hospitalsurveillance": r_hospital_surveillance,
+    "shippingwarehouse": r_shipping_warehouse,
+    "shippingoffice": r_shipping_office,
 }

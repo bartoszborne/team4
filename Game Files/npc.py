@@ -6,16 +6,17 @@ hospital_receptionist = {
     "id": "nurse",
     "name": "A nurse is at the reception desk",
     "dialogue": {
-        "a": ["A: Hi do u wanna have some tea", "NPC response A.", [items.victim_belongings]],
-        "b": ["B: do u wanna f**k?", "NPC response B.",
+        "a": ["Hi do u wanna have some tea", "NPC response A.", [items.victim_belongings]],
+        "b": ["do u wanna f**k?", "NPC response B.",
         
-        {"a": ["option a2", "NPC response a2.", "end_convo"],
-        "b": ["option b2", "NPC response b2.", {"a": ["option a3", "NPC response a3.", "end_convo"],
-        "b": ["option b3", "NPC response b3.", ""],
-        "c": ["option c3", "NPC response c3.", "end_convo"]}],
-        "c": ["option c2", "NPC response c2.", "end_convo"]}],
+            {"a": ["option a2", "NPC response a2.", "end_convo"],
+            "b": ["option b2", "NPC response b2.", 
+                {"a": ["option a3", "NPC response a3.", "end_convo"],
+                "b": ["option b3", "NPC response b3.", ""],
+                "c": ["option c3", "NPC response c3.", "end_convo"]}],
+            "c": ["option c2", "NPC response c2.", "end_convo"]}],
         
-        "c": ["C: bye.", "NPC response C.", "end_convo"]
+        "c": ["bye.", "NPC response C.", "end_convo"]
     }
 }
 
@@ -28,7 +29,6 @@ joe_branson = {
         "c": ["C: Bye.", "...", "end_convo"]
     }
 }
-
 
 
 """

@@ -10,7 +10,7 @@ victim_visible = True
 
 #---------Police-Station-Rooms-------------
 r_police_lobby = {
-    "name": "Police Lobby",
+    "name": "the Police Lobby",
     "building": "Police Station",
     "items": [],
     "npcs": {}, #CHANGE ME LATER! you pleb!
@@ -28,7 +28,7 @@ r_police_player = {
 }
 
 r_police_chief = {
-    "name": "Chief's Office",
+    "name": "the Chief's Office",
     "building": "Police Station",
     "items": [items.assignment],
     "npcs": {},
@@ -46,7 +46,7 @@ r_police_joe = {
 }
 
 r_police_interrogation = {
-    "name": "Interrogation Room",
+    "name": "the Interrogation Room",
     "building": "Police Station",
     "items": [],
     "npcs": {},
@@ -56,7 +56,7 @@ r_police_interrogation = {
 
 
 r_police_jail = {
-    "name": "Jail Room",
+    "name": "the Jail Room",
     "building": "Police Station",
     "items": [],
     "npcs": {},
@@ -66,7 +66,7 @@ r_police_jail = {
 
 #---------Hospital-Rooms-------------
 r_hospital_reception = {
-    "name": "Hospital Reception",
+    "name": "the Hospital Reception",
     "building": "Hospital",
     "items": [],
     "npcs": {"hospitalreceptionist": npc.hospital_receptionist}, #CHANGE ME LATER! you pleb!
@@ -77,12 +77,12 @@ r_hospital_patient = {
     "name": "Joe's Ward Room",
     "building": "Hospital",
     "items": [],
-    "npcs": {"joe": npc.joe_branson},
+    "npcs": {"joe": npc.joe_branson}, # ADD THE ASIAN (DR KIM JONGUN) DOCTOR
     "exits": {"exit": "hospitalreception", "hospitalreception": "hospitalreception"}
 }
 
 r_hospital_surveillance = {
-    "name": "Surveillance Room",
+    "name": "the Surveillance Room",
     "building": "Hospital",
     "items": [],
     "npcs": {},
@@ -117,8 +117,8 @@ rooms = {
     "hospitalreception": r_hospital_reception,
     "hospitalpatient": r_hospital_patient,
     "hospitalsurveillance": r_hospital_surveillance,
-    #--------------------OFFICE DICT-------------------|
-    "hospitalreception": r_hospital_reception,
+    #----------------SHIPPING WAREHOUSE DICT-------------------|
+    "shipping": r_hospital_reception,
     "hospitalpatient": r_hospital_patient,
     "hospitalsurveillance": r_hospital_surveillance,
 }

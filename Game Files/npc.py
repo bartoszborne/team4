@@ -3,7 +3,8 @@ import items
 
 
 hospital_receptionist = {
-    "name": "A hospital receptionist",
+    "id": "nurse",
+    "name": "A nurse is at the reception desk",
     "dialogue": {
         "a": ["A: Hi do u wanna have some tea", "NPC response A.", [items.victim_belongings]],
         "b": ["B: do u wanna f**k?", "NPC response B.",
@@ -18,6 +19,18 @@ hospital_receptionist = {
     }
 }
 
-npcs = {
-	"hospitalreceptionist": hospital_receptionist
+joe_branson = {
+    "id": "joe",
+    "name": "Joe Branson",
+    "dialogue": {
+        "a": ["A: Hey buddy, how you doin'?", "...", "end_convo"],
+        "b": ["B: Does it hurt anywhere?", "...", "end_convo"],
+        "c": ["C: Bye.", "...", "end_convo"]
+    }
 }
+
+"""npcs = {
+    "nurse": hospital_receptionist,
+    "receptionist": hospital_receptionist,
+    "joe":
+}"""

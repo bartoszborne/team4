@@ -29,6 +29,21 @@ joe_branson = {
     }
 }
 
+
+
+"""
+FORMAT BELOW
+----------------------------------------------------------
+change_me = {
+    "id": "EMPTY",
+    "name": "EMPTY",
+    "dialogue": {
+        "a": ["A: OPTION", "NPC RESPONCE", "end_convo"],
+        "b": ["B: OPTION", "NPC RESPONCE", "end_convo"],
+        "c": ["C: OPTION", "NPC RESPONCE", "end_convo"]
+    }
+}"""
+
 """npcs = {
     "nurse": hospital_receptionist,
     "receptionist": hospital_receptionist,

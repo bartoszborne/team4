@@ -70,14 +70,14 @@ r_hospital_reception = {
     "building": "Hospital",
     "items": [],
     "npcs": {"hospitalreceptionist": npc.hospital_receptionist}, #CHANGE ME LATER! you pleb!
-    "exits": {"exit": "outsideoutside", "outside": "outsideoutside", "building": "outsideoutside", "patientsroom": "patientsroom", "joesroom": "patientsroom", "surveillanceroom": "surveillanceroom"}
+    "exits": {"exit": "outsideoutside", "outside": "outsideoutside", "building": "outsideoutside", "patientsroom": "hospitalpatient", "joesroom": "hospitalpatient", "surveillanceroom": "hospitalsurveillance"}
 }
 
 r_hospital_patient = {
     "name": "Joe's Room",
     "building": "Hospital",
     "items": [],
-    "npcs": {"joe": npc.joe_branson}, # ADD THE ASIAN (DR KIM JONGUN) DOCTOR
+    "npcs": {"joe": npc.joe_branson, "doctor": npc.doctor_kim}, # ADD THE ASIAN (DR KIM JONGUN) DOCTOR
     "exits": {"exit": "hospitalreception", "hospitalreception": "hospitalreception"}
 }
 
@@ -94,7 +94,7 @@ r_joehouse_living = {
     "name": "the Living Room",
     "building": "Joe's House",
     "items": [],
-    "npcs": {}, #CHANGE ME LATER! you pleb!
+    "npcs": {"mrsbranson": npc.joe_wife}, #CHANGE ME LATER! you pleb!
     "exits": {"exit": "outsideoutside", "outside": "outsideoutside", "building": "outsideoutside", "office": "joehomeoffice", "joesoffice": "joehomeoffice"}
 }
 
@@ -112,7 +112,7 @@ r_shipping_warehouse = {
     "name": "the Shipping Warehouse",
     "building": "Shipping Company",
     "items": [],
-    "npcs": {}, #CHANGE ME LATER! you pleb!
+    "npcs": {"ceo": npc.shipping_ceo}, #CHANGE ME LATER! you pleb!
     "exits": {"exit": "outsideoutside", "outside": "outsideoutside", "building": "outsideoutside", "shippingoffice" : "shippingoffice", "office" : "shippingoffice"}
 }
 

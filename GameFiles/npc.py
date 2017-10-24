@@ -23,9 +23,9 @@ joe_branson = {
     "id": "joe",
     "name": "Joe Branson is",
     "dialogue": {
-        "a": ["A: Hey buddy, how you doin'?", "...", "end_convo"],
-        "b": ["B: Does it hurt anywhere?", "...", "end_convo"],
-        "c": ["C: Bye.", "...", "end_convo"]
+        "a": ["Hey buddy, how you doin'?", "...", "end_convo"],
+        "b": ["Does it hurt anywhere?", "...", "end_convo"],
+        "c": ["Bye.", "...", "end_convo"]
     }
 }
 

@@ -1,4 +1,14 @@
 import items
+import dialogues
+
+#- - - - - - - - - - - - -  POLICE STATION - - - - - - - - - - - |
+
+chief_kirill = {
+    "id": "chief",
+    "name": "Chief Kirill is",
+    "dialogue": dialogues.d_chief_kirill_1,    
+}
+
 
 
 
@@ -9,7 +19,7 @@ hospital_receptionist = {
         "a": ["Hi do u wanna have some tea", "NPC response A.", [items.victim_belongings]],
         "b": ["do u wanna f**k?", "NPC response B.",
         
-            {"a": ["option a2", "NPC response a2.", "end_convo"],
+            {"a": ["optiona 2", "NPC response a2.", "end_convo"],
             "b": ["option b2", "NPC response b2.", 
                 {"a": ["option a3", "NPC response a3.", "end_convo"],
                 "b": ["option b3", "NPC response b3.", ""],
@@ -31,21 +41,14 @@ joe_branson = {
 }
 
 
-"""
-FORMAT BELOW
-----------------------------------------------------------
-change_me = {
-    "id": "EMPTY",
-    "name": "EMPTY",
-    "dialogue": {
-        "a": ["A: OPTION", "NPC RESPONCE", "end_convo"],
-        "b": ["B: OPTION", "NPC RESPONCE", "end_convo"],
-        "c": ["C: OPTION", "NPC RESPONCE", "end_convo"]
-    }
-}"""
+"""Kirill
 
-"""npcs = {
-    "nurse": hospital_receptionist,
-    "receptionist": hospital_receptionist,
-    "joe":
-}"""
+Doctor
+Joe
+Receptionist
+Killer
+
+Shipping Company CEO
+
+Wife
+"""

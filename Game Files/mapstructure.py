@@ -96,7 +96,7 @@ r_outside_outside = {
     "building": "Outside",
     "items": [],
     "npcs": [],
-    "exits": {"policestation": "policelobby", "police": "policelobby"}
+    "exits": {"policestation": "policelobby", "police": "policelobby", "hospital": "hospitalreception"}
 }
 
 #---------ROOMS DICT-----------------

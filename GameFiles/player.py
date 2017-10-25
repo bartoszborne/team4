@@ -9,7 +9,8 @@ current_room = map_s.rooms["outsideoutside"]
 
 inventory = [items.assignment]
 
-
+# THIS IS THE ONLY FUNCTION YOU SHOULD USE
+# the rest ius done by my code
 def complete_stage(stage):
     if not stages_completed[stage]:
         stages_completed[stage] = true
@@ -45,11 +46,12 @@ def unlock_hospital():
     map_s.hospital_visible = True
 
 
-
+# Add stages here
 stages_completed = {
     "First Kirill": False
 }
 
+# Add functions here
 on_complete_functions = {
     "First Kirill": unlock_hospital
 }

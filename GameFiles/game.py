@@ -87,7 +87,8 @@ def is_valid_exit(exits, chosen_exit):
 
 def give_item(item):
     player.inventory.append(item)
-    typing_print(item["id"] + " has been added to your briefcase. Use BRIEFCASE to look inside your briefcase.\n")
+    typing_print("\n" + item["id"] + " has been added to your briefcase. Use BRIEFCASE to look inside your briefcase.\n")
+    sleep(2)
 
 
 

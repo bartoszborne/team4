@@ -104,27 +104,29 @@ def execute_take(item_id):
     item_in_room = False
 
     for item in player.current_room["items"]:
-        if item["id"] == item_id:
+        if gameparser.normalise_input(item["id"]) == item_id:
             player.inventory.append(item)
             player.current_room["items"].remove(item)
             item_in_room = True
-            print(item["id"] + "has been added to your briefcase.")
+            typing_print("\n" + item["id"] + "has been added to your briefcase.\n")
+            sleep(2)
     
     if item_in_room == False:
         print("You cannot take that.")
+        sleep(2)
     
 
 def execute_drop(item_id):
     item_in_inv = False
 
     for item in player.inventory:
-        if item["id"] == item_id:
+        if gameparser.normalise_input(item["id"]) == item_id:
             player.current_room["items"].append(item)
             player.inventory.remove(item)
             item_in_inv = True
 
     if item_in_inv == False:
-        print("You cannot drop that.")
+        typing_print("\nYou cannot drop that.\n")
 
 
 def game_failed():
@@ -206,14 +208,28 @@ def execute_command(command):
 
     elif command[0] == "take":
         if len(command) > 1:
-            execute_take(command[1])
+            if len(command) > 2:
+                take_concact = command[1] + command[2]
+                execute_take(take_concact)
+            elif len(command) == 2:
+                execute_take(command[1])
+            else:
+                print("Take what?")
+                sleep(2)
         else:
             print("Take what?")
             sleep(2)
 
     elif command[0] == "drop":
         if len(command) > 1:
-            execute_drop(command[1])
+            if len(command) > 2:
+                drop_concact = command[1] + command[2]
+                execute_drop(drop_concact)
+            elif len(command) == 2:
+                execute_drop(command[1])
+            else:
+                print("Drop what?")
+                sleep(2)
         else:
             print("Drop what?")
             sleep(2)

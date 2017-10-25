@@ -65,3 +65,21 @@ Shipping Company CEO
 
 Wife
 """
+
+def get_npc():
+    return {"joe_wife": joe_wife,
+    "shipping_ceo": shipping_ceo,
+    "killer": killer,
+    "doctor_kim": doctor_kim,
+    "joe_branson": joe_branson,
+    "hospital_receptionist": hospital_receptionist,
+    "chief_kirill": chief_kirill}
+
+def restore_npc(arr):
+    joe_wife = arr["joe_wife"]
+    shipping_ceo = arr["shipping_ceo"]
+    killer = arr["killer"]
+    doctor_kim = arr["doctor_kim"]
+    joe_branson = arr["joe_branson"]
+    hospital_receptionist = arr["hospital_receptionist"]
+    chief_kirill = arr["chief_kirill"]

@@ -126,6 +126,11 @@ def execute_drop(item_id):
         print("You cannot drop that.")
 
 
+def game_failed():
+    typing_print("\nYou have failed the game...\n")
+    game_start()
+
+
 def conversation(dictionary, npc_id):
     options_list = []
     print("\nSelect Dialogue Option Letter:\n")
@@ -151,6 +156,8 @@ def conversation(dictionary, npc_id):
             return False
         elif dictionary[dialogue_choice[0]][2] == "end_convo":
             return False
+        elif dictionary[dialogue_choice[0]][2] == "end_game":
+            game_failed()
 
 
 def execute_talk(npc):
@@ -168,9 +175,14 @@ def execute_talk(npc):
 def execute_open(item):
     if item["contents"] != "":
         typing_print(item["contents"])
+        typing_print("\n\nPress -enter- to return.")
+        input("\n» ")
+        execute_command(["briefcase"])
+
     else:
         typing_print("This item cannot be opened.")
         sleep(2)
+        execute_command(["briefcase"])
 
         
 def execute_command(command):

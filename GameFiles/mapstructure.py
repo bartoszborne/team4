@@ -75,7 +75,7 @@ r_hospital_reception = {
     "name": "the Hospital Reception",
     "building": "Hospital",
     "items": [],
-    "npcs": {"nurse": npc.hospital_receptionist}, #CHANGE ME LATER! you pleb!
+    "npcs": {"nurse": npc.hospital_receptionist},
     "exits": {"exit": "outsideoutside", "outside": "outsideoutside", "building": "outsideoutside", "patientsroom": "hospitalpatient", "joesroom": "hospitalpatient", "surveillanceroom": "hospitalsurveillance"},
     "unlocked": True
 }
@@ -84,7 +84,7 @@ r_hospital_patient = {
     "name": "Joe's Room",
     "building": "Hospital",
     "items": [],
-    "npcs": {"joe": npc.joe_branson, "doctor": npc.doctor_kim}, # ADD THE ASIAN (DR KIM JONGUN) DOCTOR
+    "npcs": {"joe": npc.joe_branson, "doctor": npc.doctor_kim},
     "exits": {"exit": "hospitalreception", "hospitalreception": "hospitalreception"},
     "unlocked": True
 }
@@ -103,7 +103,7 @@ r_joehouse_living = {
     "name": "the Living Room",
     "building": "Joe's House",
     "items": [],
-    "npcs": {"mrsbranson": npc.joe_wife}, #CHANGE ME LATER! you pleb!
+    "npcs": {"mrsbranson": npc.joe_wife},
     "exits": {"exit": "outsideoutside", "outside": "outsideoutside", "building": "outsideoutside", "office": "joehomeoffice", "joesoffice": "joehomeoffice"},
     "unlocked": True
 }
@@ -112,7 +112,7 @@ r_joehouse_office = {
     "name": "Joe's Home Office",
     "building": "Joe's House",
     "items": [],
-    "npcs": {}, # ADD THE ASIAN (DR KIM JONG UN) DOCTOR
+    "npcs": {},
     "exits": {"exit": "joelivingroom", "livingroom": "joelivingroom"},
     "unlocked": False
 }
@@ -123,7 +123,7 @@ r_shipping_warehouse = {
     "name": "the Shipping Warehouse",
     "building": "Shipping Company",
     "items": [],
-    "npcs": {"ceo": npc.shipping_ceo}, #CHANGE ME LATER! you pleb!
+    "npcs": {"ceo": npc.shipping_ceo},
     "exits": {"exit": "outsideoutside", "outside": "outsideoutside", "building": "outsideoutside", "shippingoffice" : "shippingoffice", "office" : "shippingoffice"},
     "unlocked": True
 }
@@ -132,7 +132,7 @@ r_shipping_office = {
     "name": "the Shipping Company's Office",
     "building": "Shipping Company",
     "items": [],
-    "npcs": {}, # ADD THE ASIAN (DR KIM JONGUN) DOCTOR
+    "npcs": {},
     "exits": {"exit": "shippingwarehouse", "shippingwarehouse": "shippingwarehouse", "warehouse": "shippingwarehouse"},
     "unlocked": True
 }

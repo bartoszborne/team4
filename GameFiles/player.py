@@ -42,9 +42,11 @@ def load():
 
 
 
-def got_assignment():
+def open_assignment():
     map_s.hospital_visible = True
     map_s.rooms["hospitalreception"]["unlocked"] = True
+    map_s.victim_visible = True
+    map_s.rooms["joelivingroom"]["unlocked"] = True
 
 
 # Add stages here
@@ -54,5 +56,5 @@ stages_completed = {
 
 # Add functions here
 on_complete_functions = {
-    "one": got_assignment
+    "one": open_assignment
 }

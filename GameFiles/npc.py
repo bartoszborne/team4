@@ -55,7 +55,8 @@ shipping_ceo = {
 joe_wife = {
 	"id": "mrs branson",
 	"name": "Mrs Branson is",
-	"dialogue": None #replace me
+	"dialogue": dialogues.d_joe_wife_1,
+    "d_index": 0
 }
 """Kirill
 

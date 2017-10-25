@@ -1,11 +1,11 @@
 import items
-#Initial Dialogues-------------------------------------------------------
+#Kirill Dialogues-------------------------------------------------------
 
 d_chief_kirill_1 = {
     "a": ["I'm here about the new assignment.", "Yes, that's right. Have a seat.", 
         {
         "a": ["So what is it Chief?", """
-        There was an attempt on the life of Joe Branson, one of our detectives at this branch. He's currently in a coma at a nearby hospital. 
+        There was an attempt on the life of Joe Branson while he was on a case, one of our detectives at this branch. He's currently in a coma at a nearby hospital. 
         I want you to find out who exactly did this to him and arrest the perpetrator.
         """, 
             {
@@ -19,6 +19,8 @@ d_chief_kirill_1 = {
 d_chief_kirill_2 = {
     "a": ["I like your red jeans", "... Get back to your work.", "end_convo"]
 }
+
+#------------------------------------HOSPITAL RECEPITIONIST DIALOGUES-------------------------------------------------------
 
 d_hospital_receptionist_1 = {
     "a": ["Do you know in which room I can find Joe Branson?", "May I ask what's your relation with the patient?",
@@ -55,6 +57,8 @@ d_hospital_receptionist_3 = {
     "a": ["PLEEASE Can I get your number this time!?", "Fine! dial 999 and i'll accept it ;)", "end_convo"]
 }
 
+#------------------------------------DOCTOR DIALOGUES-------------------------------------------------------
+
 d_doctor_kim_1 = {
     "a": ["Hi. I'm the investigor assigned to Mr. Branson's case.", "Oh Hello. I am Dr. Kim. I have been expecting you.", 
         {
@@ -77,8 +81,40 @@ d_doctor_kim_1 = {
 }
 
 d_doctor_kim_2 = {
-    "a": ["Are you related to Kim Jong Un, the dictator in North Korea?", "...", "end_convo"]
+    "a": ["Are you related to Kim Jong Un, the dictator of North Korea?", "...", "end_convo"]
 }
+
+#------------------------------------HOSPITAL DIALOGUES-------------------------------------------------------
+
+d_joe_wife_1 = {
+    "a": ["I know this is a difficult time, but could I ask you a few questions?", "Of course. Anything that can help catch whoever did this.",
+        {
+        "a": ["Did you know anything about the case your husband was working on?", "Not really. He was really private in that regard. He'd keep his work life separate from home.", 
+            {
+            "a": ["Was there anything suspicious leading up to the attack?", "Hmmm. I did notice in the past few weeks that Joe was out of the house more often. I thought he was working really hard for this case.",
+                {
+                "a": ["Ok thanks.", "Anytime.", "end_convo"]
+                }
+                ]
+            }
+            ]
+        }
+        ],
+    "b": ["Do you know of any place he kept his work? Documents or anything?", "From what I remember, he kept a lot of his work online. He preferred it to keeping physical copies.", 
+        {
+        "a": ["Do you know where exactly he kept this?", "Well, he enjoyed working in his home office. He spent countless hours in there. Perhaps you could start there?", 
+            {
+            "a": ["Ok thanks", "No problem.", "inc_convo"]
+            }
+            ]
+        }
+        ]
+}
+
+d_joe_wife_2 = {
+    "a": ["...", "Have you checked his office yet?", "end_convo"]
+}
+
 
 #-------------------- DIALOGUE DICTIONARY --------------------------------|
 dialswap = {

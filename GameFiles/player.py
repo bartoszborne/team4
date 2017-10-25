@@ -42,16 +42,17 @@ def load():
 
 
 
-def unlock_hospital():
+def got_assignment():
     map_s.hospital_visible = True
+    map_s.rooms["hospitalreception"]["unlocked"] = True
 
 
 # Add stages here
 stages_completed = {
-    "First Kirill": False
+    "one": False
 }
 
 # Add functions here
 on_complete_functions = {
-    "First Kirill": unlock_hospital
+    "one": got_assignment
 }

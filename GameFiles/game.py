@@ -9,6 +9,7 @@ import gameparser
 import sys
 from time import sleep
 
+godmode = False
 
 def print_commands_help():
     print("""
@@ -47,9 +48,9 @@ def list_of_items(items):
 
 def print_room_items(room):
     if room["items"] == []:
-        print("There are no items of interest here.")
+        typing_print("There are no items of interest here.\n")
     else:
-        print("There is " + list_of_items(room["items"]) + " here.")
+        typing_print("There is " + list_of_items(room["items"]) + " here.\n")
 
 
 def print_inventory(items):
@@ -57,7 +58,7 @@ def print_inventory(items):
         typing_print("\nYou have the following items in your in your briefcase:")
         for item in player.inventory:
             typing_print("\n· " + item["id"])
-        print("\n\nUse OPEN [ITEM] to view the contents of an item, if applicable. Press -enter- to return.")
+        typing_print("\n\nUse OPEN [ITEM] to view the contents of an item, if applicable.\nUse DROP [ITEM] to remove an item from your briefcase.\nPress -enter- to return.")
         response = input("\n» ")
         return response
     else:
@@ -67,9 +68,9 @@ def print_inventory(items):
 
 def print_room_name(room):
     if room["name"] == "Outside":
-        print("You're outside. Use ENTER [BUILDING NAME] to enter a building on the map.")
+        typing_print("You're outside. Use ENTER [BUILDING NAME] to enter a building on the map.\n")
     else:
-        print("You're in the %s." % (room["name"]))
+        typing_print("You're in %s.\n" % (room["name"]))
 
 
 def print_room_npcs(room):
@@ -77,7 +78,7 @@ def print_room_npcs(room):
         return
     else:
         for key in room["npcs"]:
-            print(room["npcs"][key]["name"] + " in this room. You can TALK to " + room["npcs"][key]["id"].upper())
+            typing_print(room["npcs"][key]["name"] + " in this room. You can TALK to " + room["npcs"][key]["id"].upper() + "\n")
 
 
 def is_valid_exit(exits, chosen_exit):
@@ -86,7 +87,8 @@ def is_valid_exit(exits, chosen_exit):
 
 def give_item(item):
     player.inventory.append(item)
-    print(item["id"] + " has been added to your briefcase. Use BRIEFCASE to look inside your briefcase.")
+    typing_print(item["id"] + " has been added to your briefcase. Use BRIEFCASE to look inside your briefcase.\n")
+
 
 
 def execute_go(destination):
@@ -94,6 +96,7 @@ def execute_go(destination):
         player.current_room = move(player.current_room["exits"], destination)
     else:
         print("You cannot go there.")
+        sleep(1)
 
 
 def execute_take(item_id):
@@ -158,18 +161,19 @@ def execute_talk(npc):
             keep_talking = conversation(player.current_room["npcs"][npc]["dialogue"], player.current_room["npcs"][npc]["id"])
     else:
         print("Talk to whom?")
+        sleep(2)
 
     # (Bartosz deleted his code of shame)
 
+def execute_open(item):
+    if item["contents"] != "":
+        typing_print(item["contents"])
+    else:
+        typing_print("This item cannot be opened.")
+        sleep(2)
+
         
 def execute_command(command):
-    """This function takes a command (a list of words as returned by
-    normalise_input) and, depending on the type of action (the first word of
-    the command: "go", "take", or "drop"), executes either execute_go,
-    execute_take, or execute_drop, supplying the second word as the argument.
-
-    """
-
     if 0 == len(command):
         return
 
@@ -182,23 +186,28 @@ def execute_command(command):
                 execute_go(command[1])
             else:
                 print("Go where?")
+                sleep(2)
         else:
             print("Go where?")
+            sleep(2)
 
     elif command[0] == "take":
         if len(command) > 1:
             execute_take(command[1])
         else:
             print("Take what?")
+            sleep(2)
 
     elif command[0] == "drop":
         if len(command) > 1:
             execute_drop(command[1])
         else:
             print("Drop what?")
+            sleep(2)
 
     elif command[0] == "help":
         print_commands_help()
+        sleep(2)
 
     elif command[0] == "briefcase":
         inv_response = print_inventory(player.inventory)
@@ -229,12 +238,22 @@ def execute_command(command):
                 execute_talk(command[1])
             else:
                 print("Talk to whom?")
+                sleep(2)
 
     elif command[0] == "open":
-        print("FEATURE COMING SOON!!!") # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        if len(command) > 1:
+            execute_open(command[1])
+        else:
+            print("Open what?")
+            sleep(2)
+
+    elif command[0] == "bartoszisgod":
+        global godmode
+        godmode = True
 
     else:
         print("This makes no sense.")
+        sleep(2)
 
 
 def print_menu(room):
@@ -272,9 +291,12 @@ def main():
             execute_command(command)
 
             # Check if game is won.
-            if False:
+            global godmode
+            if godmode:
                 game_won = True
-                print("GAME WON!")
+                typing_print("\nYou've reached the end of the game. Thanks for playing\n")
+                sleep(1)
+                typing_print("\nCredits:\n\nTEAM 4\n\nBartosz Borne\nJanrey Mosuela\nSuraj Patel\nJoe Lewis\nLuke Atkins\nStanislav Kataev\nNour Snx\nMiltos Zoumekas\n")
 
 
 # This is the entry point of our program.
@@ -288,7 +310,7 @@ def game_start():
     if shouldload[0] == "y" or shouldload[0] == "yes":
         player.load()  
 
-    typing_print("\nWelcome to GAME NAME, here as some commands that are common throughout the game:")
+    typing_print("\nWelcome to CSI: CARDIFF.\n\nHere as some commands that are common throughout the game:")
     print_commands_help()
     typing_print("""\nDon't worry about remembering them all, most commands will be displayed at appropiate times in the game, 
 and you can always display the above table to remind yourself by typing the command HELP.""")

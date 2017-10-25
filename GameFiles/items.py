@@ -1,11 +1,19 @@
 assignment = {
     "id": "Assigmnent",
     "name": "an assigmnent",
-    "description": "Assigmnent, Case No. 010487"
+    "contents": """Assigmnent, Case No. 010487
+
+Name: Joe Branson
+Profession: Detective
+Age, Marital Status: 34, Married
+Address: 74 Adeline St, Cardiff CF24 2BK
+
+Incident Brief:
+Branson was atacked near his residence at about 1900 hrs. Branson was rushed to a nearby hospital, unconscious, with a severe head injury."""
 }
 
-victim_belongings = {
-    "id": "Victim's Belongings",
-    "name": "the victim's belongings",
-    "description": "Victim's belongings"
+joe_keys = {
+    "id": "Joe's Keys",
+    "name": "Joe Branson's keys",
+    "contents": ""
 }

@@ -52,7 +52,7 @@ shipping_ceo = {
 
 joe_wife = {
 	"id": "mrs branson",
-	"name": "Mrs Branson ",
+	"name": "Mrs Branson is",
 	"dialogue": None, #replace me
 }
 """Kirill

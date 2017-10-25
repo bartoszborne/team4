@@ -6,7 +6,7 @@ import dialogues
 chief_kirill = {
     "id": "chief",
     "name": "Chief Kirill is",
-    "dialogue": dialogues.d_chief_kirill_1,    
+    "dialogue": dialogues.d_chief_kirill_1
 }
 
 #- - - - - - - - - - - - -  HOSPITAL - - - - - - - - - - - - - - |
@@ -15,7 +15,7 @@ chief_kirill = {
 hospital_receptionist = {
     "id": "nurse",
     "name": "A nurse sitting at the reception desk is",
-    "dialogue": None, #replace me
+    "dialogue": dialogues.d_hospital_receptionist_1 #replace me
     
 }
 
@@ -32,20 +32,20 @@ joe_branson = {
 doctor_kim = {
 	"id": "doctor",
 	"name": "Dr. Kim is",
-	"dialogue": None, #replace me
+	"dialogue": None #replace me
 }
 
 killer = {
 	"id": "killer",
 	"name": "The Killer is",
-	"dialogue": None, #replace me
+	"dialogue": None #replace me
 }
 #- - - - - - - - - - - - -  SHIPPING COMPANY - - - - - - - - - - - - - - |
 
 shipping_ceo = {
 	"id": "CEO",
 	"name": "the Shipping CEO is",
-	"dialogue": None,	 #replace me
+	"dialogue": None	 #replace me
 }
 
 #- - - - - - - - - - - - -  JOE'S HOUSE - - - - - - - - - - - - - - |
@@ -53,7 +53,7 @@ shipping_ceo = {
 joe_wife = {
 	"id": "mrs branson",
 	"name": "Mrs Branson is",
-	"dialogue": None, #replace me
+	"dialogue": None #replace me
 }
 """Kirill
 

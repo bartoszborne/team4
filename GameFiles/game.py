@@ -307,8 +307,11 @@ def game_start():
     ready = input("\nLoad existing game? (Y/N)\n» ")
     shouldload = gameparser.normalise_input(ready)
 
-    if shouldload[0] == "y" or shouldload[0] == "yes":
-        player.load()  
+    if len(shouldload) > 0:
+        if shouldload[0] == "y" or shouldload[0] == "yes":
+            player.load()
+    else:
+        game_start()          
 
     typing_print("\nWelcome to CSI: CARDIFF.\n\nHere as some commands that are common throughout the game:")
     print_commands_help()
@@ -318,11 +321,14 @@ and you can always display the above table to remind yourself by typing the comm
     ready = input("\n\nReady to start the game? (Y/N)\n» ")
     gamestart = gameparser.normalise_input(ready)
 
-    if gamestart[0] == "y" or gamestart[0] == "yes":
-        # Main game loop
-        main()
+    if len(gamestart) > 0:
+        if gamestart[0] == "y" or gamestart[0] == "yes":
+            # Main game loop
+            main()
+        else:
+            exit()
     else:
-        exit()
+        game_start()
 
 
 # Are we being run as a script? If so, run game_start().

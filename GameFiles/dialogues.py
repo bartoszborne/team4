@@ -84,7 +84,7 @@ d_doctor_kim_2 = {
     "a": ["Are you related to Kim Jong Un, the dictator of North Korea?", "...", "end_convo"]
 }
 
-#------------------------------------HOSPITAL DIALOGUES-------------------------------------------------------
+#------------------------------------JOE WIFE DIALOGUES-------------------------------------------------------
 
 d_joe_wife_1 = {
     "a": ["I know this is a difficult time, but could I ask you a few questions?", "Of course. Anything that can help catch whoever did this.",
@@ -115,10 +115,41 @@ d_joe_wife_2 = {
     "a": ["...", "Have you checked his office yet?", "end_convo"]
 }
 
+#------------------------------------ DIALOGUES-------------------------------------------------------
+
+d_joe_wife_1 = {
+    "a": ["I know this is a difficult time, but could I ask you a few questions?", "Of course. Anything that can help catch whoever did this.",
+        {
+        "a": ["Did you know anything about the case your husband was working on?", "Not really. He was really private in that regard. He'd keep his work life separate from home.", 
+            {
+            "a": ["Was there anything suspicious leading up to the attack?", "Hmmm. I did notice in the past few weeks that Joe was out of the house more often. I thought he was working really hard for this case.",
+                {
+                "a": ["Ok thanks.", "Anytime.", "end_convo"]
+                }
+                ]
+            }
+            ]
+        }
+        ],
+    "b": ["Do you know of any place he kept his work? Documents or anything?", "From what I remember, he kept a lot of his work online. He preferred it to keeping physical copies.", 
+        {
+        "a": ["Do you know where exactly he kept this?", "Well, he enjoyed working in his home office. He spent countless hours in there. Perhaps you could start there?", 
+            {
+            "a": ["Ok thanks", "No problem.", "inc_convo"]
+            }
+            ]
+        }
+        ]
+}
+
+d_joe_wife_2 = {
+    "a": ["...", "Have you checked his office yet?", "end_convo"]
+}
 
 #-------------------- DIALOGUE DICTIONARY --------------------------------|
 dialswap = {
     "nurse": [d_hospital_receptionist_2, d_hospital_receptionist_3],
-    "doctor": [d_doctor_kim_2]
+    "doctor": [d_doctor_kim_2],
+    "mrs branson": [d_joe_wife_2]
 }
 

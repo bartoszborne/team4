@@ -86,7 +86,11 @@ def print_room_npcs(room):
 
 
 def is_valid_exit(exits, chosen_exit):
-    return chosen_exit in exits
+    if chosen_exit in exits and map_s.rooms[exits[chosen_exit]]["unlocked"]:
+        can_go = True
+    else:
+        can_go = False
+    return can_go
 
 
 def give_item(item):
@@ -101,18 +105,23 @@ def execute_go(destination):
         player.current_room = move(player.current_room["exits"], destination)
     else:
         print("You cannot go there.")
-        sleep(1)
+        sleep(2)
 
 
 def execute_take(item_id):
     item_in_room = False
 
     for item in player.current_room["items"]:
-        if gameparser.normalise_input(item["id"]) == item_id:
+        item_not_concact = gameparser.normalise_input(item["id"])
+        if len(item_not_concact) > 1:
+            item_concact = item_not_concact[0] + item_not_concact[1]
+        else:
+            item_concact = item_not_concact[0]
+        if item_concact == item_id:
             player.inventory.append(item)
             player.current_room["items"].remove(item)
             item_in_room = True
-            typing_print("\n" + item["id"] + "has been added to your briefcase.\n")
+            typing_print("\n" + item["id"] + " has been added to your briefcase.\n")
             sleep(2)
     
     if item_in_room == False:
@@ -124,13 +133,19 @@ def execute_drop(item_id):
     item_in_inv = False
 
     for item in player.inventory:
-        if gameparser.normalise_input(item["id"]) == item_id:
+        item_not_concact = gameparser.normalise_input(item["id"])
+        if len(item_not_concact) > 1:
+            item_concact = item_not_concact[0] + item_not_concact[1]
+        else:
+            item_concact = item_not_concact[0]
+        if item_concact == item_id:
             player.current_room["items"].append(item)
             player.inventory.remove(item)
             item_in_inv = True
 
     if item_in_inv == False:
         typing_print("\nYou cannot drop that.\n")
+        sleep(2)
 
 
 def game_failed():
@@ -190,9 +205,10 @@ def execute_talk(npc):
 
     # (Bartosz deleted his code of shame)
 
-def execute_open(item):
-    if item["contents"] != "":
-        typing_print(item["contents"])
+def execute_open(item_concact):
+    if items.item_dict[item_concact]["contents"] != "":
+        typing_print(items.item_dict[item_concact]["contents"])
+        items.item_dict[item_concact]["opened"] = True
         typing_print("\n\nPress -enter- to return.")
         input("\n» ")
         execute_command(["briefcase"])
@@ -290,7 +306,14 @@ def execute_command(command):
 
     elif command[0] == "open":
         if len(command) > 1:
-            execute_open(command[1])
+            if len(command) > 2:
+                open_concact = command[1] + command[2]
+                execute_open(open_concact)
+            elif len(command) == 2:
+                execute_open(command[1])
+            else:
+                print("Open what?")
+                sleep(2)
         else:
             print("Open what?")
             sleep(2)
@@ -327,6 +350,28 @@ def move(exits, destination):
 def main():
     game_won = False
     while game_won == False:
+
+            # Check stages and trigger stages
+            if items.assignment in player.inventory:
+                player.complete_stage("one")
+
+            if items.assignment["opened"]:
+                player.complete_stage("two")
+
+            if map_s.rooms["joehomeoffice"]["unlocked"] == True:
+                player.complete_stage("three")
+
+            if items.joe_files["opened"]:
+                player.complete_stage("four")
+
+            # Check if game is won.
+            global godmode
+            if godmode:
+                game_won = True
+                typing_print("\nYou've reached the end of the game. Thanks for playing\n")
+                sleep(1)
+                typing_print("\nCredits:\n\nTEAM 4\n\nBartosz Borne\nJanrey Mosuela\nSuraj Patel\nJoe Lewis\nLuke Atkins\nStanislav Kataev\nNour Snx\nMiltos Zoumekas\n")
+
             # Display game map
             print("\n· · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·")
             map_v.print_map(player.current_room)
@@ -338,15 +383,6 @@ def main():
             # Execute the player's command
             execute_command(command)
 
-            #if player.stages_completed
-
-            # Check if game is won.
-            global godmode
-            if godmode:
-                game_won = True
-                typing_print("\nYou've reached the end of the game. Thanks for playing\n")
-                sleep(1)
-                typing_print("\nCredits:\n\nTEAM 4\n\nBartosz Borne\nJanrey Mosuela\nSuraj Patel\nJoe Lewis\nLuke Atkins\nStanislav Kataev\nNour Snx\nMiltos Zoumekas\n")
 
 
 # This is the entry point of our program.

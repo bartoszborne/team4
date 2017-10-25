@@ -15,7 +15,8 @@ r_police_lobby = {
     "items": [],
     "npcs": {}, 
     "exits": {"exit": "outsideoutside", "outside": "outsideoutside", "building": "outsideoutside", "myoffice": "policeplayer", "chiefsoffice": "policechief",
-    "joesoffice": "policejoe", "interrogationroom": "policeinterrogation", "jailroom": "policejail"}
+    "joesoffice": "policejoe", "interrogationroom": "policeinterrogation", "jailroom": "policejail"},
+    "unlocked": True
 }
 
 r_police_player = {
@@ -24,7 +25,8 @@ r_police_player = {
     "items": [],
     "npcs": {},
     "exits": {"exit": "policelobby", "policelobby": "policelobby", "chiefsoffice": "policechief",
-    "joesoffice": "policejoe", "interrogationroom": "policeinterrogation", "jailroom": "policejail"}
+    "joesoffice": "policejoe", "interrogationroom": "policeinterrogation", "jailroom": "policejail"},
+    "unlocked": True
 }
 
 r_police_chief = {
@@ -33,7 +35,8 @@ r_police_chief = {
     "items": [items.assignment],
     "npcs": {"chief": npc.chief_kirill},
     "exits": {"exit": "policelobby", "policelobby": "policelobby", "myoffice": "policeplayer",
-    "joesoffice": "policejoe", "interrogationroom": "policeinterrogation", "jailroom": "policejail"}
+    "joesoffice": "policejoe", "interrogationroom": "policeinterrogation", "jailroom": "policejail"},
+    "unlocked": True
 }
 
 r_police_joe = {
@@ -42,7 +45,8 @@ r_police_joe = {
     "items": [],
     "npcs": {},
     "exits": {"exit": "policelobby", "policelobby": "policelobby", "myoffice": "policeplayer", "chiefsoffice": "policechief",
-    "interrogationroom": "policeinterrogation", "jailroom": "policejail"}
+    "interrogationroom": "policeinterrogation", "jailroom": "policejail"},
+    "unlocked": True
 }
 
 r_police_interrogation = {
@@ -51,7 +55,8 @@ r_police_interrogation = {
     "items": [],
     "npcs": {},
     "exits": {"exit": "policelobby", "policelobby": "policelobby", "myoffice": "policeplayer", "chiefsoffice": "policechief",
-    "joesoffice": "policejoe", "jailroom": "policejail"}
+    "joesoffice": "policejoe", "jailroom": "policejail"},
+    "unlocked": True
 }
 
 
@@ -61,7 +66,8 @@ r_police_jail = {
     "items": [],
     "npcs": {},
     "exits": {"exit": "policelobby", "policelobby": "policelobby", "myoffice": "policeplayer", "chiefsoffice": "policechief",
-    "joesoffice": "policejoe", "interrogationroom": "policeinterrogation"}
+    "joesoffice": "policejoe", "interrogationroom": "policeinterrogation"},
+    "unlocked": True
 }
 
 #---------Hospital-Rooms-------------
@@ -70,7 +76,8 @@ r_hospital_reception = {
     "building": "Hospital",
     "items": [],
     "npcs": {"nurse": npc.hospital_receptionist}, #CHANGE ME LATER! you pleb!
-    "exits": {"exit": "outsideoutside", "outside": "outsideoutside", "building": "outsideoutside", "patientsroom": "hospitalpatient", "joesroom": "hospitalpatient", "surveillanceroom": "hospitalsurveillance"}
+    "exits": {"exit": "outsideoutside", "outside": "outsideoutside", "building": "outsideoutside", "patientsroom": "hospitalpatient", "joesroom": "hospitalpatient", "surveillanceroom": "hospitalsurveillance"},
+    "unlocked": True
 }
 
 r_hospital_patient = {
@@ -78,7 +85,8 @@ r_hospital_patient = {
     "building": "Hospital",
     "items": [],
     "npcs": {"joe": npc.joe_branson, "doctor": npc.doctor_kim}, # ADD THE ASIAN (DR KIM JONGUN) DOCTOR
-    "exits": {"exit": "hospitalreception", "hospitalreception": "hospitalreception"}
+    "exits": {"exit": "hospitalreception", "hospitalreception": "hospitalreception"},
+    "unlocked": True
 }
 
 r_hospital_surveillance = {
@@ -86,7 +94,8 @@ r_hospital_surveillance = {
     "building": "Hospital",
     "items": [],
     "npcs": {},
-    "exits": {"exit": "hospitalreception", "hospitalreception": "hospitalreception"}
+    "exits": {"exit": "hospitalreception", "hospitalreception": "hospitalreception"},
+    "unlocked": True
 }
 
 #---------Joe's House-Rooms-------------
@@ -95,15 +104,17 @@ r_joehouse_living = {
     "building": "Joe's House",
     "items": [],
     "npcs": {"mrsbranson": npc.joe_wife}, #CHANGE ME LATER! you pleb!
-    "exits": {"exit": "outsideoutside", "outside": "outsideoutside", "building": "outsideoutside", "office": "joehomeoffice", "joesoffice": "joehomeoffice"}
+    "exits": {"exit": "outsideoutside", "outside": "outsideoutside", "building": "outsideoutside", "office": "joehomeoffice", "joesoffice": "joehomeoffice"},
+    "unlocked": True
 }
 
 r_joehouse_office = {
     "name": "Joe's Home Office",
     "building": "Joe's House",
     "items": [],
-    "npcs": {}, # ADD THE ASIAN (DR KIM JONGUN) DOCTOR
-    "exits": {"exit": "joelivingroom", "livingroom": "joelivingroom"}
+    "npcs": {}, # ADD THE ASIAN (DR KIM JONG UN) DOCTOR
+    "exits": {"exit": "joelivingroom", "livingroom": "joelivingroom"},
+    "unlocked": False
 }
 
 
@@ -113,7 +124,8 @@ r_shipping_warehouse = {
     "building": "Shipping Company",
     "items": [],
     "npcs": {"ceo": npc.shipping_ceo}, #CHANGE ME LATER! you pleb!
-    "exits": {"exit": "outsideoutside", "outside": "outsideoutside", "building": "outsideoutside", "shippingoffice" : "shippingoffice", "office" : "shippingoffice"}
+    "exits": {"exit": "outsideoutside", "outside": "outsideoutside", "building": "outsideoutside", "shippingoffice" : "shippingoffice", "office" : "shippingoffice"},
+    "unlocked": True
 }
 
 r_shipping_office = {
@@ -121,7 +133,8 @@ r_shipping_office = {
     "building": "Shipping Company",
     "items": [],
     "npcs": {}, # ADD THE ASIAN (DR KIM JONGUN) DOCTOR
-    "exits": {"exit": "shippingwarehouse", "shippingwarehouse": "shippingwarehouse", "warehouse": "shippingwarehouse",}
+    "exits": {"exit": "shippingwarehouse", "shippingwarehouse": "shippingwarehouse", "warehouse": "shippingwarehouse"},
+    "unlocked": True
 }
 
 
@@ -132,7 +145,8 @@ r_outside_outside = {
     "building": "Outside",
     "items": [],
     "npcs": [],
-    "exits": {"policestation": "policelobby", "police": "policelobby", "hospital": "hospitalreception", "shipping": "shippingwarehouse", "shippingcompany": "shippingwarehouse", "joeshouse": "joelivingroom"}
+    "exits": {"policestation": "policelobby", "police": "policelobby", "hospital": "hospitalreception", "shipping": "shippingwarehouse", "shippingcompany": "shippingwarehouse", "joeshouse": "joelivingroom"},
+    "unlocked": True
 }
 
 #---------ROOMS DICT-----------------

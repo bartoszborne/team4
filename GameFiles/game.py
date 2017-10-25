@@ -226,9 +226,8 @@ def execute_open(item_concact):
         execute_command(["briefcase"])
 
 def unlock():
-    
-
-        
+    pass
+           
 def execute_command(command):
     if 0 == len(command):
         return

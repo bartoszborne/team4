@@ -27,6 +27,8 @@ def print_commands_help():
 │ TALK to [CHARACTER]        │ Talk to a character found within a room.                          │
 │ END                        │ End the game.                                                     │
 └────────────────────────────┴───────────────────────────────────────────────────────────────────┘""")
+    typing_print("\n\nPress -enter- to return.")
+        response = input("\n» ")
 
 
 def typing_print(text):
@@ -133,6 +135,7 @@ def execute_drop(item_id):
 
 def game_failed():
     typing_print("\nYou have failed the game...\n")
+    sleep(2)
     game_start()
 
 
@@ -248,8 +251,9 @@ def execute_command(command):
             sleep(2)
 
     elif command[0] == "help":
-        print_commands_help()
-        sleep(2)
+        help_response = print_commands_help()
+        if help_response == "":
+            main()
 
     elif command[0] == "briefcase":
         inv_response = print_inventory(player.inventory)
@@ -266,6 +270,9 @@ def execute_command(command):
             player.save()
             
         exit()
+
+    elif command[0] == "save":
+        player.save()
 
     elif command[0] == "exit":
         if player.current_room != map_s.rooms["outsideoutside"]:

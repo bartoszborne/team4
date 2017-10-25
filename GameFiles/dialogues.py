@@ -141,8 +141,8 @@ d_killer_1_compromise =
         }
 """
 d_killer_1 = {
-    "a": ["Put the knife down!", "- drops knife -", []], #insert item knife here
-    "b": ["-charge at him-", "-stabs you", ""] #game over
+    "a": ["Put the knife down!", "-drops knife-", [items.knife]],
+    "b": ["-Charge at him-", "-stabs you-", "end_game"]
 }
 
 
@@ -151,7 +151,7 @@ d_killer_2 = {
         {
         "a": ["Cut the crap, You are nothing but a cheap thug doing dirty work for small cash! You are not gaining anything from this but another jail time. Now tell me the reason you killed him!", "And what do I get from telling you anything?! I am going to jail anyway, like you said. What can you offer me for that info?", 
             {
-            "a": ["Well, If it comes to this - shoot in a knee – Now tell me who you are working if you still want to walk!", "Aaaa! What the f*ck are you doing?!...All right, Jesus, I will talk. … I got an email from an encrypted email address. It had the name of the target and my reward for my job.*ugh* There was also a name, “Nickname”, so I knew that I better take the job. Was that really necessary?!", 
+            "a": ["Well, If it comes to this -shoot in a knee– Now tell me who you are working if you still want to walk!", "Aaaa! What the f*ck are you doing?!...All right, Jesus, I will talk. … I got an email from an encrypted email address. It had the name of the target and my reward for my job.*ugh* There was also a name, “Nickname”, so I knew that I better take the job. Was that really necessary?!", 
                 {
                 "a": ["So who is “nickname”? and have you ever seen this man?", "Everyone knows his name. People call him that because all drug deals go though him, every dealer in town work for him, because he is their dealer. And if you go against him, you don’t live long. And no, no one knows how he looks like. Only that he has power and drugs, so much people are scared to get to know who he is.", 
                     {
@@ -186,7 +186,7 @@ d_killer_2 = {
             ], # NOTE
         "b": ["You are going to prison anyway, so if you give me the information about your employer I will try my best to put him in the same place as you are, so you can have your revenge.", "No, boss. It doesn’t work this way. I don’t even know his face. This is an empty deal.", 
             {
-            "a": ["Well, If it comes to this - shoot in a knee – Now tell me who you are working if you still want to walk!", "Aaaa! What the f*ck are you doing?!...All right, Jesus, I will talk. … I got an email from an encrypted email address. It had the name of the target and my reward for my job.*ugh* There was also a name, “Nickname”, so I knew that I better take the job. Was that really necessary?!", 
+            "a": ["Well, If it comes to this -shoot in a knee– Now tell me who you are working if you still want to walk!", "Aaaa! What the f*ck are you doing?!...All right, Jesus, I will talk. … I got an email from an encrypted email address. It had the name of the target and my reward for my job.*ugh* There was also a name, “Nickname”, so I knew that I better take the job. Was that really necessary?!", 
                 {
                 "a": ["So who is “nickname”? and have you ever seen this man?", "Everyone knows his name. People call him that because all drug deals go though him, every dealer in town work for him, because he is their dealer. And if you go against him, you don’t live long. And no, no one knows how he looks like. Only that he has power and drugs, so much people are scared to get to know who he is.", 
                     {

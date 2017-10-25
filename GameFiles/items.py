@@ -44,9 +44,17 @@ Shipping company address: 6 Seawall Court, Seawall Rd, Cardiff CF24 5PQ
     "opened": False
 }
 
+knife = {
+    "id": "Knife",
+    "name": "a knife",
+    "contents": "",
+    "opened": False
+}
+
 item_dict = {
     "assignment": assignment,
     "joeskeys": joe_keys,
     "surveillancekeys": surveillance_keys,
-    "joesfiles": joe_files
+    "joesfiles": joe_files,
+    "knife": knife
 }

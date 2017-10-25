@@ -43,9 +43,6 @@ def load():
 
 
 def get_assignment():
-    global inventory
-    if items.assignment in inventory == False:
-        inventory.append(items.assignment)
     map_s.hospital_visible = True
     map_s.rooms["hospitalreception"]["unlocked"] = True
 
@@ -57,6 +54,8 @@ def open_assignment():
 def unlock_joeoffice():
     map_s.rooms["joehomeoffice"]["unlocked"] = True
     map_s.rooms["hospitalpatient"]["npcs"]["killer"] = npc.killer
+    del(map_s.rooms["hospitalpatient"]["npcs"]["doctor"])
+
 
 def open_joefiles():
     items.joe_files["opened"] = True

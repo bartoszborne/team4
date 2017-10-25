@@ -101,6 +101,13 @@ def give_item(item):
 
 
 def execute_go(destination):
+    if player.current_room == map_s.rooms["joelivingroom"]:
+        if is_valid_exit(player.current_room["exits"], destination):
+            player.current_room = move(player.current_room["exits"], destination)
+        else:
+            typing_print("That room is locked. Use UNLOCK to unlock the door if you have a key.\n")
+            sleep(2)
+
     if is_valid_exit(player.current_room["exits"], destination):
         player.current_room = move(player.current_room["exits"], destination)
     else:
@@ -144,7 +151,7 @@ def execute_drop(item_id):
             item_in_inv = True
 
     if item_in_inv == False:
-        typing_print("\nYou cannot drop that.\n")
+        print("\nYou cannot drop that.\n")
         sleep(2)
 
 
@@ -217,6 +224,9 @@ def execute_open(item_concact):
         typing_print("This item cannot be opened.")
         sleep(2)
         execute_command(["briefcase"])
+
+def unlock():
+    
 
         
 def execute_command(command):

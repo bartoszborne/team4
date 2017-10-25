@@ -28,7 +28,7 @@ def print_commands_help():
 │ END                        │ End the game.                                                     │
 └────────────────────────────┴───────────────────────────────────────────────────────────────────┘""")
     typing_print("\n\nPress -enter- to return.")
-        response = input("\n» ")
+    response = input("\n» ")
 
 
 def typing_print(text):
@@ -140,7 +140,6 @@ def game_failed():
 
 
 def conversation(dictionary, npc_id):
-    options_list = []
     print("\nSelect dialogue option letter or press -enter- to return:\n")
 
     for key in sorted(dictionary):
@@ -338,6 +337,8 @@ def main():
 
             # Execute the player's command
             execute_command(command)
+
+            #if player.stages_completed
 
             # Check if game is won.
             global godmode

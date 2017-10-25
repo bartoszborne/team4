@@ -69,7 +69,7 @@ r_hospital_reception = {
     "name": "the Hospital Reception",
     "building": "Hospital",
     "items": [],
-    "npcs": {"hospitalreceptionist": npc.hospital_receptionist}, #CHANGE ME LATER! you pleb!
+    "npcs": {"nurse": npc.hospital_receptionist}, #CHANGE ME LATER! you pleb!
     "exits": {"exit": "outsideoutside", "outside": "outsideoutside", "building": "outsideoutside", "patientsroom": "hospitalpatient", "joesroom": "hospitalpatient", "surveillanceroom": "hospitalsurveillance"}
 }
 

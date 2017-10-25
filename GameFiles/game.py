@@ -137,7 +137,10 @@ def conversation(dictionary, npc_id):
         exit()
     elif dialogue_choice[0] == "a" or dialogue_choice[0] == "b" or dialogue_choice[0] == "c":
         print("\n· · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·\n")
-        typing_print(npc_id.upper() + ': "' + dictionary[dialogue_choice[0]][1] + '"')
+        typing_print("YOU" + ': "' + dictionary[dialogue_choice[0]][0] + '"\n')
+        sleep(1)
+        typing_print(npc_id.upper() + ': "' + dictionary[dialogue_choice[0]][1] + '"\n')
+        sleep(2)
         if type(dictionary[dialogue_choice[0]][2]) == dict:
             conversation(dictionary[dialogue_choice[0]][2], npc_id)
         elif type(dictionary[dialogue_choice[0]][2]) == list:

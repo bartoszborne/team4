@@ -31,7 +31,7 @@ joe_branson = {
 doctor_kim = {
 	"id": "doctor",
 	"name": "Dr. Kim is",
-	"dialogue": None #replace me
+	"dialogue": dialogues.d_doctor_kim_1
 }
 
 killer = {
@@ -42,7 +42,7 @@ killer = {
 #- - - - - - - - - - - - -  SHIPPING COMPANY - - - - - - - - - - - - - - |
 
 shipping_ceo = {
-	"id": "CEO",
+	"id": "ceo",
 	"name": "the Shipping CEO is",
 	"dialogue": None	 #replace me
 }
@@ -83,3 +83,13 @@ def restore_npc(arr):
     joe_branson = arr["joe_branson"]
     hospital_receptionist = arr["hospital_receptionist"]
     chief_kirill = arr["chief_kirill"]
+
+npc_dict = {
+    "mrs branson": joe_wife,
+    "ceo": shipping_ceo,
+    "killer": killer,
+    "doctor": doctor_kim,
+    "joe": joe_branson,
+    "nurse": hospital_receptionist,
+    "chief": chief_kirill
+}

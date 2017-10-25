@@ -33,18 +33,41 @@ d_hospital_receptionist_1 = {
     
     "b": ["Hi, I seem to have lost my number, can I have yours?", "Excuse me? I have a boyfriend.", "end_convo"]
 }
-d_doctor_1 = {
-    "a:" ["Hi. I'm the investigor assigned to Mr. Branson's case.", "Oh Hello. I am Dr. Kim. I have been expecting you.", 
-        {
-        "a": ["So how is his condition?", "At the moment. He's in a state of coma."
-            {
-            "a": [
-            ]
 
+d_hospital_receptionist_2 = {
+    "a": ["OPTION A", "NPC RESPONCE A", "end_convo"],
+    "b": ["OPTION B", "NPC RESPONCE B", "end_convo"],
+    "c": ["OPTION C", "NPC RESPONCE C", "end_convo"]
+}
+
+
+d_doctor_kim_1 = {
+    "a": ["Hi. I'm the investigor assigned to Mr. Branson's case.", "Oh Hello. I am Dr. Kim. I have been expecting you.", 
+        {
+        "a": ["So how is his condition?", "At the moment. He's in a state of coma.",
+            {
+            "a": ["Please explain.", "He was hit with a blunt instrument. So hard that it put him into comatose state.",
+                {
+                "a": ["Do you know exactly when he'll be up and mobile enough to talk?", "Given his conditions, only time can tell when he'll wake up. It may take days or even months.",
+                    {
+                    "a": ["Ok, Thanks.", "No problem.", "end_convo"]
+                    }
+                ]
+                }
+            ],
+            "b": ["Do you know what weapon hit him that put him into this state", "He was most likely whipped with a pistol or some metallic object.", "end_convo"]
             }
         ]
         }
     ]
 }
 
+<<<<<<< HEAD
+
+#-------------------- DIALOGUE DICTIONARY --------------------------------|
+dialswap = {
+    "nurse": d_hospital_receptionist_2
+}
+=======
 d_doctor_1 = {
+>>>>>>> ccfab89e20b832fde7d00988fd3c418a7379c3b0

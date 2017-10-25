@@ -1,9 +1,4 @@
 import items
-
-<<<<<<< HEAD
-
-=======
->>>>>>> c13190e8717c8e0bc783917c8b7a5609973dcc02
 #Initial Dialogues-------------------------------------------------------
 
 d_chief_kirill_1 = {
@@ -18,7 +13,6 @@ d_hospital_receptionist_1 = {
         "a": ["I am investigating his case.", "Oh ok. Just go left and follow the corridor to the last room.",
             {
             "a": ["Ok Thanks.", "No problem", "end_convo"],
-<<<<<<< HEAD
             "b": ["Do you happen to know who's the doctor assigned to this patient?", "Yes. It is Dr. Kim.",
                 {
                 "a": ["Ok Thanks.", "No problem", "end_convo"]
@@ -26,12 +20,6 @@ d_hospital_receptionist_1 = {
                 ],
             "c": ["Did the patient have any valuables on him at the time of being admitted to hospital?", "Yes. He had some keys.",
                 {"a": ["Ok Thanks.", "No problem", "end_convo"],
-=======
-            "b": ["Do you happen to know who's the doctor assigned to this patient?", "Yes. It is Dr. Kim.",{
-                "a": ["Ok Thanks.", "No problem", "end_convo"],
-            "c": ["Did the patient have any valuables on him at the time of being admitted to hospital?", "Yes. He had some keys.",{
-                "a": ["Ok Thanks.", "No problem", "end_convo"],
->>>>>>> c13190e8717c8e0bc783917c8b7a5609973dcc02
                 "b": ["Can I take them please?", "Yes. No problem", [items.joe_keys]]
                 }
                 ]
@@ -40,13 +28,11 @@ d_hospital_receptionist_1 = {
         "b": ["We do kinky sh!t together.", "Security!", "end_game"]
         }
         ],
-<<<<<<< HEAD
 
 
     
     "b": ["Hi, I seem to have lost my number, can I have yours?", "Excuse me? I have a boyfriend.", "end_convo"]
 }
-
 d_doctor_1 = {
     "a:" ["Hi. I'm the investigor assigned to Mr. Branson's case.", "Oh Hello. I am Dr. Kim. I have been expecting you.", 
         {
@@ -60,14 +46,5 @@ d_doctor_1 = {
         }
     ]
 }
-=======
-        "b": ["We do kinky sh!t together.", "Security!", "end_game"],
-        }
-    ],
-    "b": ["Hi, I seem to have lost my number, can I have yours?", "Excuse me? I have a boyfriend.", "end_convo"],   
-}]}
 
 d_doctor_1 = {
-    
-}
->>>>>>> c13190e8717c8e0bc783917c8b7a5609973dcc02

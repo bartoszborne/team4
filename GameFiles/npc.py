@@ -40,7 +40,8 @@ doctor_kim = {
 killer = {
 	"id": "killer",
 	"name": "The Killer is",
-	"dialogue": None #replace me
+	"dialogue": dialogues.d_killer_1,
+    "d_index": 0
 }
 #- - - - - - - - - - - - -  SHIPPING COMPANY - - - - - - - - - - - - - - |
 

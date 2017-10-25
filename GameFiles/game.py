@@ -138,39 +138,43 @@ def game_failed():
 
 def conversation(dictionary, npc_id):
     options_list = []
-    print("\nSelect Dialogue Option Letter:\n")
+    print("\nSelect dialogue option letter or press -enter- to return:\n")
 
     for key in sorted(dictionary):
         print(str(key).upper() + ': "' + dictionary[key][0] + '"')
 
     chosen_dialogue = input("\n» ")
-    dialogue_choice = gameparser.normalise_input(chosen_dialogue)
+    if chosen_dialogue != "":
 
-    if dialogue_choice[0] == "end":
-        exit()
-    elif dialogue_choice[0] == "a" or dialogue_choice[0] == "b" or dialogue_choice[0] == "c":
-        print("\n· · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·\n")
-        typing_print("YOU" + ': "' + dictionary[dialogue_choice[0]][0] + '"\n')
-        sleep(1)
-        typing_print(npc_id.upper() + ': "' + dictionary[dialogue_choice[0]][1] + '"\n')
-        sleep(2)
-        if type(dictionary[dialogue_choice[0]][2]) == dict:
-            conversation(dictionary[dialogue_choice[0]][2], npc_id)
-        elif type(dictionary[dialogue_choice[0]][2]) == list:
-            give_item(dictionary[dialogue_choice[0]][2][0])
-            dial_index = npc.npc_dict[npc_id]["d_index"]
-            npc.npc_dict[npc_id]["dialogue"] = dialogues.dialswap[npc_id][dial_index]
-            npc.npc_dict[npc_id]["d_index"] = dial_index + 1
-            return False
-        elif dictionary[dialogue_choice[0]][2] == "end_convo":
-            return False
-        elif dictionary[dialogue_choice[0]][2] == "end_game":
-            game_failed()
-        elif dictionary[dialogue_choice[0]][2] == "inc_convo":
-            dial_index = npc.npc_dict[npc_id]["d_index"]
-            npc.npc_dict[npc_id]["dialogue"] = dialogues.dialswap[npc_id][dial_index]
-            npc.npc_dict[npc_id]["d_index"] = dial_index + 1
-            return False
+        dialogue_choice = gameparser.normalise_input(chosen_dialogue)
+
+        if dialogue_choice[0] == "end":
+            exit()
+        elif dialogue_choice[0] == "a" or dialogue_choice[0] == "b" or dialogue_choice[0] == "c":
+            print("\n· · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·\n")
+            typing_print("YOU" + ': "' + dictionary[dialogue_choice[0]][0] + '"\n')
+            sleep(1)
+            typing_print(npc_id.upper() + ': "' + dictionary[dialogue_choice[0]][1] + '"\n')
+            sleep(2)
+            if type(dictionary[dialogue_choice[0]][2]) == dict:
+                conversation(dictionary[dialogue_choice[0]][2], npc_id)
+            elif type(dictionary[dialogue_choice[0]][2]) == list:
+                give_item(dictionary[dialogue_choice[0]][2][0])
+                dial_index = npc.npc_dict[npc_id]["d_index"]
+                npc.npc_dict[npc_id]["dialogue"] = dialogues.dialswap[npc_id][dial_index]
+                npc.npc_dict[npc_id]["d_index"] = dial_index + 1
+                return False
+            elif dictionary[dialogue_choice[0]][2] == "end_convo":
+                return False
+            elif dictionary[dialogue_choice[0]][2] == "end_game":
+                game_failed()
+            elif dictionary[dialogue_choice[0]][2] == "inc_convo":
+                dial_index = npc.npc_dict[npc_id]["d_index"]
+                npc.npc_dict[npc_id]["dialogue"] = dialogues.dialswap[npc_id][dial_index]
+                npc.npc_dict[npc_id]["d_index"] = dial_index + 1
+                return False
+    else:
+        return False
 
 def execute_talk(npc):
     # Janrey's Code:

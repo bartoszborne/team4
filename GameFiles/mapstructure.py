@@ -3,9 +3,9 @@ import items
 
 
 police_visible = True
-hospital_visible = True
-shipping_visible = True
-victim_visible = True
+hospital_visible = False
+shipping_visible = False
+victim_visible = False
 
 
 #---------Police-Station-Rooms-------------
@@ -32,7 +32,7 @@ r_police_player = {
 r_police_chief = {
     "name": "the Chief's Office",
     "building": "Police Station",
-    "items": [items.assignment],
+    "items": [],
     "npcs": {"chief": npc.chief_kirill},
     "exits": {"exit": "policelobby", "policelobby": "policelobby", "myoffice": "policeplayer",
     "joesoffice": "policejoe", "interrogationroom": "policeinterrogation", "jailroom": "policejail"},
@@ -105,7 +105,7 @@ r_joehouse_living = {
     "items": [],
     "npcs": {"mrsbranson": npc.joe_wife},
     "exits": {"exit": "outsideoutside", "outside": "outsideoutside", "building": "outsideoutside", "office": "joehomeoffice", "joesoffice": "joehomeoffice"},
-    "unlocked": True
+    "unlocked": False
 }
 
 r_joehouse_office = {
@@ -125,7 +125,7 @@ r_shipping_warehouse = {
     "items": [],
     "npcs": {"ceo": npc.shipping_ceo},
     "exits": {"exit": "outsideoutside", "outside": "outsideoutside", "building": "outsideoutside", "shippingoffice" : "shippingoffice", "office" : "shippingoffice"},
-    "unlocked": True
+    "unlocked": False
 }
 
 r_shipping_office = {

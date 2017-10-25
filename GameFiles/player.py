@@ -12,8 +12,8 @@ inventory = [items.assignment]
 # THIS IS THE ONLY FUNCTION YOU SHOULD USE
 # the rest ius done by my code
 def complete_stage(stage):
-    if not stages_completed[stage]:
-        stages_completed[stage] = true
+    if stages_completed[stage] == False:
+        stages_completed[stage] = True
         on_complete_functions[stage]()
 
 
@@ -42,19 +42,40 @@ def load():
 
 
 
-def open_assignment():
+def get_assignment():
+    global inventory
+    if items.assignment in inventory == False:
+        inventory.append(items.assignment)
     map_s.hospital_visible = True
     map_s.rooms["hospitalreception"]["unlocked"] = True
+
+def open_assignment():
+    items.assignment["opened"] = True
     map_s.victim_visible = True
     map_s.rooms["joelivingroom"]["unlocked"] = True
+
+def unlock_joeoffice():
+    map_s.rooms["joehomeoffice"]["unlocked"] = True
+    map_s.rooms["hospitalpatient"]["npcs"]["killer"] = npc.killer
+
+def open_joefiles():
+    items.joe_files["opened"] = True
+    map_s.shipping_visible = True
+    map_s.rooms["shippingwarehouse"]["unlocked"] = True
 
 
 # Add stages here
 stages_completed = {
-    "one": False
+    "one": False,
+    "two": False,
+    "three": False,
+    "four": False
 }
 
 # Add functions here
 on_complete_functions = {
-    "one": open_assignment
+    "one": get_assignment,
+    "two": open_assignment,
+    "three": unlock_joeoffice,
+    "four": open_joefiles
 }

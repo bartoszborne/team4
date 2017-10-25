@@ -1,7 +1,7 @@
 assignment = {
-    "id": "Assigmnent",
-    "name": "an assigmnent",
-    "contents": """Assigmnent, Case No. 010487
+    "id": "Assignment",
+    "name": "an assignment",
+    "contents": """Assignment, Case No. 010487
 
 Name: Joe Branson
 Profession: Detective
@@ -34,7 +34,7 @@ surveillance_keys = {
 joe_files = {
 	"id": "Joe's Files",
     "name": "Joe's files",
-    "contents":"""Assigmnent, Case No. 010456
+    "contents":"""Assignment, Case No. 010456
 
 Investigation on a shipping company with suspicion of trading illegal goods.
 
@@ -42,4 +42,11 @@ Shipping company address: 6 Seawall Court, Seawall Rd, Cardiff CF24 5PQ
 
 """,
     "opened": False
+}
+
+item_dict = {
+    "assignment": assignment,
+    "joeskeys": joe_keys,
+    "surveillancekeys": surveillance_keys,
+    "joesfiles": joe_files
 }

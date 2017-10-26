@@ -68,8 +68,8 @@ def get_knife():
     del(map_s.rooms["hospitalpatient"]["npcs"]["killer"])
 
 def get_warehousepasscode():
-    map_s.rooms["policechief"]["npcs"]["chief"] = npc.killer
-    del(map_s.rooms["shippingoffice"]["npcs"]["chief"])
+    map_s.rooms["shippingoffice"]["npcs"]["chief"] = npc.chief_kirill
+    del(map_s.rooms["policechief"]["npcs"]["chief"])
     npc.chief_killer["dialogue"] = dialogues.d_chief_kirill_ending
     map_s.rooms["policejail"]["npcs"]["killer"] = npc.killer
     del(map_s.rooms["policeinterrogation"]["npcs"]["killer"])

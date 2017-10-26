@@ -8,7 +8,7 @@ import dialogues
 # Start game at the reception
 current_room = map_s.rooms["outsideoutside"]
 
-inventory = [items.assignment, items.joe_keys]
+inventory = []
 
 # THIS IS THE ONLY FUNCTION YOU SHOULD USE
 # the rest ius done by my code

@@ -17,18 +17,20 @@ game_success = False
 
 def print_commands_help():
     print("""
-┌────────────────────────────┬───────────────────────────────────────────────────────────────────┐
-│ COMMAND                    │ Function                                                          │
-├────────────────────────────┼───────────────────────────────────────────────────────────────────┤
-│ ENTER [BUILDING/ROOM NAME] │ Enter the specified building or room. (Also accepts GO command).  │
-│ EXIT                       │ Exit the current room (or building).                              │
-│ BRIEFCASE                  │ Look at the contents of your briefcase.                           │
-│ TAKE [ITEM]                │ Take an item into your briefcase.                                 │
-│ DROP [ITEM]                │ Take an item out of your briefcase.                               │
-│ OPEN [ITEM/ELEMENT]        │ Open an item in your briefcase or interactive element in a room.  │
-│ TALK to [CHARACTER]        │ Talk to a character found within a room.                          │
-│ END                        │ End the game.                                                     │
-└────────────────────────────┴───────────────────────────────────────────────────────────────────┘""")
+┌────────────────────────────┬────────────────────────────────────────────────────────────────────┐
+│ COMMAND                    │ Function                                                           │
+├────────────────────────────┼────────────────────────────────────────────────────────────────────┤
+│ ENTER [BUILDING/ROOM NAME] │ Enter the specified building or room. (Also accepts GO command).   │
+│ EXIT                       │ Exit the current room (or building).                               │
+│ BRIEFCASE                  │ Look at the contents of your briefcase.                            │
+│ TAKE [ITEM]                │ Take an item into your briefcase.                                  │
+│ DROP [ITEM]                │ Take an item out of your briefcase.                                │
+│ OPEN [ITEM]                │ Open an item in your briefcase to view its contents, if applicable.│
+│ TALK to [CHARACTER]        │ Talk to a character found within a room.                           │
+│ UNLOCK [ROOM NAME]         │ End the game.                                                      │
+│ SAVE                       │ Save the game anytime.                                             │
+│ END                        │ End the game.                                                      │
+└────────────────────────────┴────────────────────────────────────────────────────────────────────┘""")
     typing_print("\n\nPress -enter- to return.")
     response = input("\n» ")
 

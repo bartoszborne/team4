@@ -11,7 +11,9 @@ from time import sleep
 import npc
 import dialogues
 
-godmode = False
+
+game_success = False
+
 
 def print_commands_help():
     print("""
@@ -86,10 +88,14 @@ def print_room_npcs(room):
 
 
 def is_valid_exit(exits, chosen_exit):
-    if chosen_exit in exits and map_s.rooms[exits[chosen_exit]]["unlocked"]:
-        can_go = True
+    if chosen_exit in exits:
+        if map_s.rooms[exits[chosen_exit]]["unlocked"]:
+            can_go = "unlocked"
+        else:
+            can_go = "locked"
     else:
-        can_go = False
+        can_go = "not"
+
     return can_go
 
 
@@ -99,17 +105,12 @@ def give_item(item):
     sleep(2)
 
 
-
 def execute_go(destination):
-    if player.current_room == map_s.rooms["joelivingroom"]:
-        if is_valid_exit(player.current_room["exits"], destination):
-            player.current_room = move(player.current_room["exits"], destination)
-        else:
-            typing_print("That room is locked. Use UNLOCK to unlock the door if you have a key.\n")
-            sleep(2)
-
-    if is_valid_exit(player.current_room["exits"], destination):
+    if is_valid_exit(player.current_room["exits"], destination) == "unlocked":
         player.current_room = move(player.current_room["exits"], destination)
+    elif is_valid_exit(player.current_room["exits"], destination) == "locked":
+        typing_print("That room is locked. Use UNLOCK [ROOM NAME] to unlock the door if you have a key.\n")
+        sleep(2)
     else:
         print("You cannot go there.")
         sleep(2)
@@ -161,6 +162,11 @@ def game_failed():
     game_start()
 
 
+def game_win():
+    global game_success
+    game_success = True
+
+
 def conversation(dictionary, npc_id):
     print("\nSelect dialogue option letter or press -enter- to return:\n")
 
@@ -192,6 +198,8 @@ def conversation(dictionary, npc_id):
                 return False
             elif dictionary[dialogue_choice[0]][2] == "end_game":
                 game_failed()
+            elif dictionary[dialogue_choice[0]][2] == "win_game":
+                game_win()
             elif dictionary[dialogue_choice[0]][2] == "inc_convo":
                 dial_index = npc.npc_dict[npc_id]["d_index"]
                 npc.npc_dict[npc_id]["dialogue"] = dialogues.dialswap[npc_id][dial_index]
@@ -213,21 +221,42 @@ def execute_talk(npc):
     # (Bartosz deleted his code of shame)
 
 def execute_open(item_concact):
-    if items.item_dict[item_concact]["contents"] != "":
-        typing_print(items.item_dict[item_concact]["contents"])
-        items.item_dict[item_concact]["opened"] = True
-        typing_print("\n\nPress -enter- to return.")
-        input("\n» ")
-        execute_command(["briefcase"])
+    if items.item_dict[item_concact] in player.inventory:
+        if items.item_dict[item_concact]["contents"] != "":
+            typing_print(items.item_dict[item_concact]["contents"])
+            items.item_dict[item_concact]["opened"] = True
+            typing_print("\n\nPress -enter- to return.")
+            input("\n» ")
+            execute_command(["briefcase"])
+
+        else:
+            typing_print("This item cannot be opened.")
+            sleep(2)
+            execute_command(["briefcase"])
+    else:
+            typing_print("This item cannot be opened.")
+            sleep(2)
+            execute_command(["briefcase"])
+
+def execute_unlock(destination):
+    if is_valid_exit(player.current_room["exits"], destination) == "unlocked" or is_valid_exit(player.current_room["exits"], destination) == "locked":
+        room_to_unlock = move(player.current_room["exits"], destination)
+        if room_to_unlock == map_s.rooms["joehomeoffice"]:
+            if items.joe_keys in player.inventory:
+                room_to_unlock["unlocked"] = True
+            else:
+                print("You dont have an item to unlock this room.")
+
+        if room_to_unlock == map_s.rooms["shippingwarehouse"]:
+            if items.warehouse_passcode in player.inventory:
+                room_to_unlock["unlocked"] = True
+            else:
+                print("You dont have an item to unlock this room.")
 
     else:
-        typing_print("This item cannot be opened.")
+        print("You cannot unlock that. Incorrect room name or room out of reach.")
         sleep(2)
-        execute_command(["briefcase"])
 
-def unlock():
-    pass
-           
 def execute_command(command):
     if 0 == len(command):
         return
@@ -327,9 +356,19 @@ def execute_command(command):
             print("Open what?")
             sleep(2)
 
-    elif command[0] == "bartoszisgod":
-        global godmode
-        godmode = True
+    elif command[0] == "unlock":
+        if len(command) > 1:
+            if len(command) > 2:
+                dest_concact = command[1] + command[2]
+                execute_unlock(dest_concact)
+            elif len(command) == 2:
+                execute_unlock(command[1])
+            else:
+                print("Unlock where?")
+                sleep(2)
+        else:
+            print("Unlock where?")
+            sleep(2)
 
     else:
         print("This makes no sense.")
@@ -373,9 +412,18 @@ def main():
             if items.joe_files["opened"]:
                 player.complete_stage("four")
 
+            if items.knife in player.inventory:
+                player.complete_stage("five")
+
+            if items.warehouse_passcode in player.inventory:
+                player.complete_stage("six")
+
+            if items.sms["opened"]:
+                typing_print("\nTEXT MESSAGE FROM HOSPITAL:\nThe patient Joe Branson is has regained consciousness. Please come to the hospital.")
+                sleep(5)
+
             # Check if game is won.
-            global godmode
-            if godmode:
+            if game_success:
                 game_won = True
                 typing_print("\nYou've reached the end of the game. Thanks for playing\n")
                 sleep(1)

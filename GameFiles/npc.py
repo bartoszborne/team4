@@ -45,12 +45,13 @@ killer = {
 }
 #- - - - - - - - - - - - -  SHIPPING COMPANY - - - - - - - - - - - - - - |
 
+"""
 shipping_ceo = {
 	"id": "ceo",
 	"name": "the Shipping CEO is",
 	"dialogue": None	
 }
-
+"""
 #- - - - - - - - - - - - -  JOE'S HOUSE - - - - - - - - - - - - - - |
 
 joe_wife = {

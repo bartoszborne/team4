@@ -51,10 +51,26 @@ knife = {
     "opened": False
 }
 
+warehouse_passcode = {
+    "id": "Warehouse Passcode",
+    "name": "a warehouse passcode",
+    "contents": "7854",
+    "opened": False
+}
+
+sms = {
+    "id": "sms",
+    "name": "sms",
+    "contents": "",
+    "opened": False
+}
+
 item_dict = {
     "assignment": assignment,
     "joeskeys": joe_keys,
     "surveillancekeys": surveillance_keys,
     "joesfiles": joe_files,
-    "knife": knife
+    "knife": knife,
+    "warehouse_passcode": warehouse_passcode,
+    "sms": sms
 }

@@ -70,6 +70,7 @@ def print_inventory(items):
     else:
         typing_print("\nYour briefcase is empty. Use TAKE [ITEM] to take something into your briefcase.")
         sleep(2)
+        return "empty"
 
 
 def print_room_name(room):

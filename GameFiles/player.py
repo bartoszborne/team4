@@ -64,7 +64,6 @@ def open_joefiles():
     items.sms["opened"] = True
 
 def get_knife():
-    items.sms["opened"] = True
     map_s.rooms["policeinterrogation"]["npcs"]["killer"] = npc.killer
     del(map_s.rooms["hospitalpatient"]["npcs"]["killer"])
 

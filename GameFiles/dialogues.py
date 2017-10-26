@@ -136,11 +136,11 @@ d_joe_wife_2 = {
 """
 NOTE: Ignore this. this is just to keep my head sane.
 d_killer_1_agressive = {
-    "a": ["Well, If it comes to this - shoot in a knee – Now tell me who you are working if you still want to walk!", "Aaaa! What the f*ck are you doing?!...All right, Jesus, I will talk. … I got an email from an encrypted email address. It had the name of the target and my reward for my job.*ugh* There was also a name, “Nickname”, so I knew that I better take the job. Was that really necessary?!", 
+    "a": ["Well, If it comes to this - shoot in a knee – Now tell me who you are working if you still want to walk!", "Aaaa! What the f*ck are you doing?!...All right, Jesus, I will talk. ... I got an email from an encrypted email address. It had the name of the target and my reward for my job.*ugh* There was also a name, “Nickname”, so I knew that I better take the job. Was that really necessary?!", 
         {
         "a": ["So who is “nickname”? and have you ever seen this man?", "Everyone knows his name. People call him that because all drug deals go though him, every dealer in town work for him, because he is their dealer. And if you go against him, you don’t live long. And no, no one knows how he looks like. Only that he has power and drugs, so much people are scared to get to know who he is.", 
             {
-            "a": ["Don’t make me shoot your other leg. Jail is even worse in a wheelchair.", "WOW, wow, no need for that! I am going to regret this… People talk about a shipping company operating at the docks. There are three ships, one leaves every day and a different ship replaces it, so it looks like nothing changes. It happens during the night, so no one can see ships change. That must be the place.", "end_convo"]
+            "a": ["Don’t make me shoot your other leg. Jail is even worse in a wheelchair.", "WOW, wow, no need for that! I am going to regret this... People talk about a shipping company operating at the docks. There are three ships, one leaves every day and a different ship replaces it, so it looks like nothing changes. It happens during the night, so no one can see ships change. That must be the place.", "end_convo"]
             }
             ]
         }
@@ -151,7 +151,7 @@ d_killer_1_compromise =
         {
         "a": ["So who is “nickname”? and have you ever seen this man?", "Everyone knows his name. People call him that because all drug deals go though him, every dealer in town work for him, because he is their dealer. And if you go against him, you don’t live long. And no, no one knows how he looks like. Only that he has power and drugs, so much people are scared to get to know who he is.", 
             {
-            "a": ["Remember the deal: you talk and I`ll make sure that you end up spending your jail time alive. You will be safe.", "I am going to regret this… People talk about a shipping company operating at the docks. There are three ships, one leaves every day and a different ship replaces it, so it looks like nothing changes. It happens during the night, so no one can see ships change. That must be the place.", "end_convo"]
+            "a": ["Remember the deal: you talk and I`ll make sure that you end up spending your jail time alive. You will be safe.", "I am going to regret this... People talk about a shipping company operating at the docks. There are three ships, one leaves every day and a different ship replaces it, so it looks like nothing changes. It happens during the night, so no one can see ships change. That must be the place.", "end_convo"]
             }
             ]
         }
@@ -163,15 +163,15 @@ d_killer_1 = {
 
 
 d_killer_2 = {
-    "a": ["Why did you kill Joe Branson?", "Detective. Not all can run around town thinking they can do whatever they want just because they have a badge…", 
+    "a": ["Why did you kill Joe Branson?", "Detective. Not all can run around town thinking they can do whatever they want just because they have a badge...", 
         {
         "a": ["Cut the crap, You are nothing but a cheap thug doing dirty work for small cash! You are not gaining anything from this but another jail time. Now tell me the reason you killed him!", "And what do I get from telling you anything?! I am going to jail anyway, like you said. What can you offer me for that info?", 
             {
-            "a": ["Well, If it comes to this -shoot in a knee– Now tell me who you are working if you still want to walk!", "Aaaa! What the f*ck are you doing?!...All right, Jesus, I will talk. … I got an email from an encrypted email address. It had the name of the target and my reward for my job.*ugh* There was also a name, “Nickname”, so I knew that I better take the job. Was that really necessary?!", 
+            "a": ["Well, If it comes to this -shoot in a knee– Now tell me who you are working if you still want to walk!", "Aaaa! What the f*ck are you doing?!...All right, Jesus, I will talk. exit_input I got an email from an encrypted email address. It had the name of the target and my reward for my job.*ugh* There was also a name, “Nickname”, so I knew that I better take the job. Was that really necessary?!", 
                 {
                 "a": ["So who is “nickname”? and have you ever seen this man?", "Everyone knows his name. People call him that because all drug deals go though him, every dealer in town work for him, because he is their dealer. And if you go against him, you don’t live long. And no, no one knows how he looks like. Only that he has power and drugs, so much people are scared to get to know who he is.", 
                     {
-                    "a": ["Don’t make me shoot your other leg. Jail is even worse in a wheelchair.", "WOW, wow, no need for that! I am going to regret this… I work inside a warehouse... Inside the warehouse contains crates full of toys. But don't be decieved by them, if you break the toys into half, a pack of cocaine and other drugs can be found inside.", 
+                    "a": ["Don’t make me shoot your other leg. Jail is even worse in a wheelchair.", "WOW, wow, no need for that! I am going to regret this... I work inside a warehouse... Inside the warehouse contains crates full of toys. But don't be decieved by them, if you break the toys into half, a pack of cocaine and other drugs can be found inside.", 
                         {
                         "a": ["So how do I get in without getting caught?.", "Well, security is tight. All I can give you now is the code that will give you access into the warehouse. That's all I know. So please no more.", [items.warehouse_passcode]]
                         }
@@ -182,11 +182,11 @@ d_killer_2 = {
                 ]
             }
             ],
-        "b": ["You are clearly just a hired muscle. Tell me who hired you and I might move you to a better prison, one where you won`t get shanked after your second night.", "Okey, you got a deal… I got an email from an encrypted email address. It had the name of the target and my reward for my job. There was also a name, “Nickname”, so I knew that I better take the job.", 
+        "b": ["You are clearly just a hired muscle. Tell me who hired you and I might move you to a better prison, one where you won`t get shanked after your second night.", "Okey, you got a deal... I got an email from an encrypted email address. It had the name of the target and my reward for my job. There was also a name, “Nickname”, so I knew that I better take the job.", 
             {
             "a": ["So who is “nickname”? and have you ever seen this man?", "Everyone knows his name. People call him that because all drug deals go though him, every dealer in town work for him, because he is their dealer. And if you go against him, you don’t live long. And no, no one knows how he looks like. Only that he has power and drugs, so much people are scared to get to know who he is.", 
                 {
-                "a": ["Remember the deal: you talk and I`ll make sure that you end up spending your jail time alive. You will be safe.", "I am going to regret this… Inside the warehouse contains crates full of toys. But don't be decieved by them, if you break the toys into half, a pack of cocaine and other drugs can be found inside.", 
+                "a": ["Remember the deal: you talk and I`ll make sure that you end up spending your jail time alive. You will be safe.", "I am going to regret this... Inside the warehouse contains crates full of toys. But don't be decieved by them, if you break the toys into half, a pack of cocaine and other drugs can be found inside.", 
                     {
                     "a": ["So how do I get in without getting caught?.", "Well, security is tight. All I can give you now is the code that will give you access into the warehouse. That's all I know. So please no more.", [items.warehouse_passcode]]
                     }
@@ -199,11 +199,11 @@ d_killer_2 = {
         ],
     "b": ["Who are you working for?", "You are not getting anything from me. I was a prisoner once, you have nothing what would scare me now.", 
         {
-        "a": ["You think that you are so tough, excon, nothing can scare you, think of an isolation room. Four blank walls, no windows and nobody around. Drives people insane… Because this is how you can spend the rest of your jail time, or you can talk and give me what I want.", "Ugh…F*ck…Okey… I got an email from an encrypted email address. It had the name of the target and my reward for my job. There was also a name, “Nickname”, so I knew that I better take the job.",
+        "a": ["You think that you are so tough, excon, nothing can scare you, think of an isolation room. Four blank walls, no windows and nobody around. Drives people insane... Because this is how you can spend the rest of your jail time, or you can talk and give me what I want.", "Ugh...F*ck...Okey... I got an email from an encrypted email address. It had the name of the target and my reward for my job. There was also a name, “Nickname”, so I knew that I better take the job.",
             {
             "a": ["So who is “nickname”? and have you ever seen this man?", "Everyone knows his name. People call him that because all drug deals go though him, every dealer in town work for him, because he is their dealer. And if you go against him, you don’t live long. And no, no one knows how he looks like. Only that he has power and drugs, so much people are scared to get to know who he is.", 
                 {
-                "a": ["Remember the deal: you talk and I`ll make sure that you end up spending your jail time alive. You will be safe.", "I am going to regret this… Inside the warehouse contains crates full of toys. But don't be decieved by them, if you break the toys into half, a pack of cocaine and other drugs can be found inside.", 
+                "a": ["Remember the deal: you talk and I`ll make sure that you end up spending your jail time alive. You will be safe.", "I am going to regret this... Inside the warehouse contains crates full of toys. But don't be decieved by them, if you break the toys into half, a pack of cocaine and other drugs can be found inside.", 
                     {
                     "a": ["So how do I get in without getting caught?.", "Well, security is tight. All I can give you now is the code that will give you access into the warehouse. That's all I know. So please no more.", [items.warehouse_passcode]]
                     }
@@ -214,11 +214,11 @@ d_killer_2 = {
             ],
         "b": ["You are going to prison anyway, so if you give me the information about your employer I will try my best to put him in the same place as you are, so you can have your revenge.", "No, boss. It doesn’t work this way. I don’t even know his face. This is an empty deal.", 
             {
-            "a": ["Well, If it comes to this -shoot in a knee– Now tell me who you are working if you still want to walk!", "Aaaa! What the f*ck are you doing?!...All right, Jesus, I will talk. … I got an email from an encrypted email address. It had the name of the target and my reward for my job.*ugh* There was also a name, “Nickname”, so I knew that I better take the job. Was that really necessary?!", 
+            "a": ["Well, If it comes to this -shoot in a knee– Now tell me who you are working if you still want to walk!", "Aaaa! What the f*ck are you doing?!...All right, Jesus, I will talk. ... I got an email from an encrypted email address. It had the name of the target and my reward for my job.*ugh* There was also a name, “Nickname”, so I knew that I better take the job. Was that really necessary?!", 
                 {
                 "a": ["So who is “nickname”? and have you ever seen this man?", "Everyone knows his name. People call him that because all drug deals go though him, every dealer in town work for him, because he is their dealer. And if you go against him, you don’t live long. And no, no one knows how he looks like. Only that he has power and drugs, so much people are scared to get to know who he is.", 
                     {
-                    "a": ["Don’t make me shoot your other leg. Jail is even worse in a wheelchair.", "WOW, wow, no need for that! I am going to regret this… Inside the warehouse contains crates full of toys. But don't be decieved by them, if you break the toys into half, a pack of cocaine and other drugs can be found inside.", 
+                    "a": ["Don’t make me shoot your other leg. Jail is even worse in a wheelchair.", "WOW, wow, no need for that! I am going to regret this... Inside the warehouse contains crates full of toys. But don't be decieved by them, if you break the toys into half, a pack of cocaine and other drugs can be found inside.", 
                         {
                         "a": ["So how do I get in without getting caught?.", "Well, security is tight. All I can give you now is the code that will give you access into the warehouse. That's all I know. So please no more.", [items.warehouse_passcode]]
                         }

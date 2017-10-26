@@ -123,7 +123,7 @@ r_shipping_warehouse = {
     "name": "the Shipping Warehouse",
     "building": "Shipping Company",
     "items": [],
-    "npcs": {"ceo": npc.shipping_ceo},
+    "npcs": {},
     "exits": {"exit": "outsideoutside", "outside": "outsideoutside", "building": "outsideoutside", "shippingoffice" : "shippingoffice", "office" : "shippingoffice"},
     "unlocked": False
 }

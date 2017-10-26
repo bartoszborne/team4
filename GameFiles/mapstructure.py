@@ -111,7 +111,7 @@ r_joehouse_living = {
 r_joehouse_office = {
     "name": "Joe's Home Office",
     "building": "Joe's House",
-    "items": [],
+    "items": [items.joe_files],
     "npcs": {},
     "exits": {"exit": "joelivingroom", "livingroom": "joelivingroom"},
     "unlocked": False

@@ -424,6 +424,7 @@ def main():
             if items.sms["opened"]:
                 typing_print("\nTEXT MESSAGE FROM HOSPITAL:\nThe patient Joe Branson is has regained consciousness. Please come to the hospital.")
                 sleep(5)
+                items.sms["opened"] = False
 
             # Check if game is won.
             if game_success:

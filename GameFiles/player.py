@@ -67,14 +67,16 @@ def open_joefiles():
 
 def get_knife():
     map_s.rooms["policeinterrogation"]["npcs"]["killer"] = npc.killer
-    del(map_s.rooms["hospitalpatient"]["npcs"]["killer"])
+    if "killer" in map_s.rooms["hospitalpatient"]["npcs"]:
+        del(map_s.rooms["hospitalpatient"]["npcs"]["killer"])
 
 def get_warehousepasscode():
     map_s.rooms["shippingoffice"]["npcs"]["chief"] = npc.chief_kirill
     del(map_s.rooms["policechief"]["npcs"]["chief"])
     npc.chief_kirill["dialogue"] = dialogues.d_chief_kirill_ending
     map_s.rooms["policejail"]["npcs"]["killer"] = npc.killer
-    del(map_s.rooms["policeinterrogation"]["npcs"]["killer"])
+    if "killer" in map_s.rooms["policeinterrogation"]["npcs"]:
+        del(map_s.rooms["policeinterrogation"]["npcs"]["killer"])
 
 
 # Add stages here

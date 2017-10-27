@@ -224,22 +224,26 @@ def execute_talk(npc):
     # (Bartosz deleted his code of shame)
 
 def execute_open(item_concact):
-    if items.item_dict[item_concact] in player.inventory:
-        if items.item_dict[item_concact]["contents"] != "":
-            typing_print(items.item_dict[item_concact]["contents"])
-            items.item_dict[item_concact]["opened"] = True
-            typing_print("\n\nPress -enter- to return.")
-            input("\n» ")
-            execute_command(["briefcase"])
+    if item_concact in items.item_dict:
+        if items.item_dict[item_concact] in player.inventory:
+            if items.item_dict[item_concact]["contents"] != "":
+                typing_print(items.item_dict[item_concact]["contents"])
+                items.item_dict[item_concact]["opened"] = True
+                typing_print("\n\nPress -enter- to return.")
+                input("\n» ")
+                execute_command(["briefcase"])
 
+            else:
+                typing_print("This item cannot be opened.")
+                sleep(2)
+                execute_command(["briefcase"])
         else:
-            typing_print("This item cannot be opened.")
-            sleep(2)
-            execute_command(["briefcase"])
+                typing_print("This item cannot be opened.")
+                sleep(2)
+                execute_command(["briefcase"])
     else:
-            typing_print("This item cannot be opened.")
-            sleep(2)
-            execute_command(["briefcase"])
+        print("Open what?")
+        sleep(2)
 
 def execute_unlock(destination):
     if is_valid_exit(player.current_room["exits"], destination) == "unlocked" or is_valid_exit(player.current_room["exits"], destination) == "locked":

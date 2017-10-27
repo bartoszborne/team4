@@ -4,7 +4,7 @@ import items
 d_chief_kirill_1 = {
     "a": ["I'm here about my first assignment.", "Yes, that's right. Have a seat.", 
         {
-        "a": ["So what is it Chief?", "There was an attempt on the life of Joe Branson while he was on a case, one of our detectives at this branch. He's currently in a coma at a nearby hospital. I want you to find out who exactly did this to him and arrest the perpetrator", 
+        "a": ["So what is it Chief?", "There was an attempt on the life of Joe Branson, one of our detectives at this branch, while he was on a case.\nHe's currently in a coma at a nearby hospital. I want you to find out who exactly did this to him and arrest the perpetrator", 
             {
             "a": ["Ok, got it.", "Here's your assignment file. I expect to see you when you find out who the perpetrator is.", [items.assignment]]
             }
@@ -157,7 +157,7 @@ d_killer_1_compromise =
         }
 """
 d_killer_1 = {
-    "a": ["Put the knife down!", "-drops knife-", [items.knife]],
+    "a": ["Put the knife down!", "-drops knife-\" \n\n\"//You have taken the killer into custody - you can interrogate him at the police station in the interrogation room//", [items.knife]],
     "b": ["-Charge at him-", "-stabs you-", "end_game"]
 }
 

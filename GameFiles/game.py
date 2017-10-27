@@ -421,9 +421,14 @@ def main():
             if items.warehouse_passcode in player.inventory:
                 player.complete_stage("six")
 
+            if items.task["opened"]:
+                typing_print("\nTEXT MESSAGE FROM POLICE CHIEF:\nWhen you get to the police station, come to my office - I've got your first assignment.")
+                input("\n\nPress -enter- to continue.\n\n» ")
+                items.task["opened"] = False
+
             if items.sms["opened"]:
                 typing_print("\nTEXT MESSAGE FROM HOSPITAL:\nThe patient Joe Branson is has regained consciousness. Please come to the hospital.")
-                sleep(5)
+                input("\n\nPress -enter- to continue.\n\n» ")
                 items.sms["opened"] = False
 
             # Check if game is won.
@@ -449,9 +454,9 @@ def main():
 # This is the entry point of our program.
 def game_start():
     # Resize the console for more room (also means no scrollback, potentially more predictable player experience?)
-    os.system("mode con: cols=150 lines=42")
+    os.system("mode con: cols=150 lines=70")
     
-    ready = input("\nLoad existing game? (Y/N)\n» ")
+    ready = input("\nLoad existing saved game? (Y/N)\n» ")
     shouldload = gameparser.normalise_input(ready)
 
     if len(shouldload) > 0:
@@ -460,7 +465,7 @@ def game_start():
     else:
         game_start()          
 
-    typing_print("\nWelcome to CSI: CARDIFF.\n\nMost commands will be displayed at appropiate times in the game, but you can always display the game commands by typing the command HELP.")
+    typing_print("\nWelcome to CSI: CARDIFF.\n\nMost commands will be displayed at appropiate times in the game, but you can always display the game commands by typing the command HELP.\n\n\n\nYour role in this game is that of a new detective...")
 
     ready = input("\n\nReady to start the game? (Y/N)\n» ")
     gamestart = gameparser.normalise_input(ready)

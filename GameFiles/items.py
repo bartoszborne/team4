@@ -58,6 +58,13 @@ warehouse_passcode = {
     "opened": False
 }
 
+task = {
+    "id": "task",
+    "name": "task",
+    "contents": "",
+    "opened": True
+}
+
 sms = {
     "id": "sms",
     "name": "sms",
@@ -72,5 +79,6 @@ item_dict = {
     "joesfiles": joe_files,
     "knife": knife,
     "warehouse_passcode": warehouse_passcode,
-    "sms": sms
+    "sms": sms,
+    "task": task
 }

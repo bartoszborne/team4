@@ -79,7 +79,7 @@ def get_warehousepasscode():
 
 # Add stages here
 stages_completed = {
-    "zero": False
+    "zero": False,
     "one": False,
     "two": False,
     "three": False,
@@ -90,7 +90,7 @@ stages_completed = {
 
 # Add functions here
 on_complete_functions = {
-    "zero": get_task
+    "zero": get_task,
     "one": get_assignment,
     "two": open_assignment,
     "three": unlock_joeoffice,

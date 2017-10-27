@@ -42,6 +42,8 @@ def load():
         print("\nGame data not found! Starting from the beginning.\n")
 
 
+def get_task():
+    items.task["opened"] = False
 
 def get_assignment():
     map_s.hospital_visible = True
@@ -77,6 +79,7 @@ def get_warehousepasscode():
 
 # Add stages here
 stages_completed = {
+    "zero": False
     "one": False,
     "two": False,
     "three": False,
@@ -87,6 +90,7 @@ stages_completed = {
 
 # Add functions here
 on_complete_functions = {
+    "zero": get_task
     "one": get_assignment,
     "two": open_assignment,
     "three": unlock_joeoffice,

@@ -407,6 +407,9 @@ def main():
     while game_won == False:
 
             # Check stages and trigger stages
+            if items.task["opened"] == False:
+                player.complete_stage("zero")
+
             if items.assignment in player.inventory:
                 player.complete_stage("one")
 

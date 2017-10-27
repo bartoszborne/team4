@@ -251,6 +251,8 @@ def execute_unlock(destination):
         if room_to_unlock == map_s.rooms["joehomeoffice"]:
             if items.joe_keys in player.inventory:
                 room_to_unlock["unlocked"] = True
+                print("You've unlocked the room.")
+                sleep(2)
             else:
                 print("You dont have an item to unlock this room.")
 

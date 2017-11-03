@@ -259,6 +259,8 @@ def execute_unlock(destination):
         if room_to_unlock == map_s.rooms["shippingwarehouse"]:
             if items.warehouse_passcode in player.inventory:
                 room_to_unlock["unlocked"] = True
+                print("You've unlocked the room.")
+                sleep(2)
             else:
                 print("You dont have an item to unlock this room.")
 
@@ -412,6 +414,9 @@ def main():
             if items.task["opened"] == False:
                 player.complete_stage("zero")
 
+            if items.sms["opened"] == False:
+                player.complete_stage("smsread")
+
             if items.assignment in player.inventory:
                 player.complete_stage("one")
 
@@ -446,6 +451,8 @@ def main():
                 typing_print("\nYou've reached the end of the game. Thanks for playing\n")
                 sleep(1)
                 typing_print("\nCredits:\n\nTEAM 4\n\nBartosz Borne\nJanrey Mosuela\nSuraj Patel\nJoe Lewis\nLuke Atkins\nStanislav Kataev\nNour Snx\nMiltos Zoumekas\n")
+                sleep(2)
+                exit()
 
             # Display game map
             print("\n· · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·")

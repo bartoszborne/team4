@@ -78,6 +78,9 @@ def get_warehousepasscode():
     if "killer" in map_s.rooms["policeinterrogation"]["npcs"]:
         del(map_s.rooms["policeinterrogation"]["npcs"]["killer"])
 
+def sms_read():
+    items.sms["opened"] = False
+
 
 # Add stages here
 stages_completed = {
@@ -87,7 +90,8 @@ stages_completed = {
     "three": False,
     "four": False,
     "five": False,
-    "six": False
+    "six": False,
+    "smsread": False
 }
 
 # Add functions here
@@ -98,5 +102,6 @@ on_complete_functions = {
     "three": unlock_joeoffice,
     "four": open_joefiles,
     "five": get_knife,
-    "six": get_warehousepasscode
+    "six": get_warehousepasscode,
+    "smsread": sms_read
 }
